@@ -11,6 +11,31 @@
   --indigo:   #3730A3;
   --navy:     #0F172A;
   --font:     'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* VAF master design system tokens */
+  --vaf-bg:             var(--bg);
+  --vaf-surface:        var(--white);
+  --vaf-surface-raised: var(--bg-alt);
+  --vaf-border:         var(--border);
+  --vaf-border-strong:  #CBD5E1;
+  --vaf-text:           var(--text);
+  --vaf-text-2:         var(--muted);
+  --vaf-text-3:         #94A3B8;
+  --vaf-accent:         var(--accent);
+  --vaf-accent-hover:   #CC5508;
+  --vaf-accent-subtle:  #FFF7ED;
+  --vaf-accent-border:  #FED7AA;
+  --vaf-navy:           #1E3A5F;
+  --vaf-navy-dark:      #162D4A;
+  --vaf-font-heading:   'Playfair Display', Georgia, serif;
+  --vaf-font-body:      var(--font);
+  --vaf-font-mono:      'DM Mono', ui-monospace, monospace;
+  --vaf-radius-sm:      4px;
+  --vaf-radius-md:      8px;
+  --vaf-radius-lg:      10px;
+  --vaf-shadow:         0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
+  --vaf-shadow-md:      0 4px 12px rgba(15,23,42,0.08), 0 2px 4px rgba(15,23,42,0.04);
+  --vaf-transition:     200ms ease;
 }
 
 body {
@@ -175,10 +200,15 @@ p { color: var(--muted); line-height: 1.7; }
   text-decoration: none;
   font-weight: 700;
   font-size: 0.9375rem;
-  transition: opacity 0.15s;
+  transition: background var(--vaf-transition), transform var(--vaf-transition), box-shadow var(--vaf-transition);
+  box-shadow: 0 2px 8px rgba(232,99,10,0.25);
 }
 
-.btn-primary:hover { opacity: 0.88; }
+.btn-primary:hover {
+  background: var(--vaf-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(232,99,10,0.35);
+}
 
 .btn-outline {
   background: transparent;
