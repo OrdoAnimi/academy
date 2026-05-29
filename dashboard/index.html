@@ -3,9 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Architect Tracker - Velocity Architecture Academy</title>
-  <meta name="description" content="Track your AI architecture certification progress: Google AI Essentials, GitHub Foundations, Azure AI Fundamentals, AWS AI Practitioner, CCA-F.">
+  <title>AI Architect Tracker — Velocity Architecture Academy</title>
+  <meta name="description" content="Track your progress across five AI architecture certifications: Google AI Essentials, GitHub Foundations, Azure AI Fundamentals, AWS AI Practitioner, and CCA-F.">
   <link rel="stylesheet" href="../style.css">
+  <style>
+    /* ── Dark page theme ─────────────────────────── */
+    body { background: #080F1E; }
+
+    nav  { background: #0C1628; border-bottom-color: rgba(255,255,255,0.07); }
+    .nav-brand      { color: #F1F5F9; }
+    .nav-links a    { color: #3D4F63; }
+    .nav-links a:hover { color: #E8630A; }
+
+    /* ── Summary band ─────────────────────────────── */
+    .dash-summary       { background: #0C1628; }
+    .dash-summary-of    { color: #1E293B; }
+    .dash-summary-label { color: #1E293B; }
+    .dash-summary-text  { color: #2D3F52; }
+
+    /* ── Course cards ─────────────────────────────── */
+    .dash-course {
+      background: #0F1929;
+      border-color: rgba(255,255,255,0.07);
+      border-top-color: rgba(255,255,255,0.07);
+    }
+    .dash-course.state-inprogress { border-top-color: #E8630A; box-shadow: 0 2px 24px rgba(232,99,10,0.08); }
+    .dash-course.state-complete   { border-top-color: #22C55E; box-shadow: 0 2px 24px rgba(34,197,94,0.08);  }
+    .dash-course-header  { border-bottom-color: rgba(255,255,255,0.07); }
+    .dash-course-title   { color: #F1F5F9; }
+    .dash-course-meta    { color: #374151; }
+    .dash-course-n       { color: rgba(255,255,255,0.05); }
+    .dash-course.state-inprogress .dash-course-n { color: rgba(232,99,10,0.14); }
+    .dash-course.state-complete   .dash-course-n { color: rgba(34,197,94,0.17);  }
+
+    /* ── Progress ─────────────────────────────────── */
+    .dash-progress-label { color: #94A3B8; }
+    .dash-progress-pct   { color: #E8630A; }
+    .dash-course.state-complete .dash-progress-pct { color: #22C55E; }
+    .dash-course-bar     { background: rgba(255,255,255,0.05); }
+
+    /* ── Steps ────────────────────────────────────── */
+    .dash-steps li            { border-bottom-color: rgba(255,255,255,0.055); }
+    .dash-steps li label      { color: #3D4F63; }
+    .dash-steps li label:hover{ color: #CBD5E1; }
+    .dash-steps li.done label { color: #1B2840; }
+
+    /* ── Certificate box ──────────────────────────── */
+    .dash-cert          { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07); }
+    .dash-cert-label    { color: #7DD3FC; }
+    .dash-cert strong   { color: #E2E8F0; }
+    .dash-cert p        { color: #2D3F52; }
+
+    /* ── Reset ────────────────────────────────────── */
+    .dash-reset       { border-color: rgba(255,255,255,0.08); color: #1E293B; }
+    .dash-reset:hover { border-color: rgba(255,255,255,0.18); color: #475569; }
+
+    /* ── Status badge (dark variant) ─────────────── */
+    .dash-badge {
+      font-size: 0.5625rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.25rem 0.625rem;
+      border-radius: 99px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .dash-badge-notstarted { background: rgba(255,255,255,0.05); color: #374151; }
+    .dash-badge-inprogress { background: rgba(232,99,10,0.1); color: #E8630A; border: 1px solid rgba(232,99,10,0.2); }
+    .dash-badge-complete   { background: rgba(34,197,94,0.1);  color: #22C55E; border: 1px solid rgba(34,197,94,0.22); }
+
+    /* ── Enrol button ─────────────────────────────── */
+    .dash-enrol {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      background: #E8630A;
+      color: white;
+      text-decoration: none;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      padding: 0.5rem 1.125rem;
+      border-radius: 7px;
+      margin-top: 0.75rem;
+      transition: background 0.15s, transform 0.15s, box-shadow 0.15s;
+      width: fit-content;
+    }
+    .dash-enrol:hover {
+      background: #CC5508;
+      color: white;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(232,99,10,0.35);
+    }
+    .dash-enrol-arr { display: inline-block; transition: transform 0.15s; }
+    .dash-enrol:hover .dash-enrol-arr { transform: translateX(3px); }
+
+    /* ── Pre-flight block ─────────────────────────── */
+    .dash-preflight {
+      background: rgba(56,189,248,0.03);
+      border: 1px solid rgba(56,189,248,0.1);
+      border-radius: 10px;
+      padding: 1.375rem 1.5rem;
+      margin-bottom: 1.875rem;
+    }
+    .dash-preflight-label {
+      font-size: 0.5625rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #38BDF8;
+      margin-bottom: 0.875rem;
+    }
+    .dash-preflight-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5625rem;
+    }
+    .dash-preflight-list li {
+      font-size: 0.875rem;
+      color: #2D3F52;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.625rem;
+      line-height: 1.5;
+    }
+    .dash-preflight-list li::before {
+      content: '';
+      display: block;
+      width: 5px;
+      height: 5px;
+      min-width: 5px;
+      border-radius: 50%;
+      background: rgba(56,189,248,0.35);
+      margin-top: 7px;
+      flex-shrink: 0;
+    }
+
+    /* ── Summary steps counter ────────────────────── */
+    .dash-summary-steps {
+      font-size: 0.75rem;
+      color: #1E293B;
+      margin-top: 0.4375rem;
+    }
+
+    @media (max-width: 768px) {
+      .dash-course    { padding: 1.5rem 1.25rem; }
+      .dash-preflight { padding: 1rem 1.25rem; }
+    }
+  </style>
 </head>
 <body>
 
@@ -16,14 +162,14 @@
     <div class="hero-bar"></div>
     <h1>AI Architect Tracker</h1>
     <p class="hero-sub">Five certifications. One path.</p>
-    <p class="hero-copy">Track your progress through the AI architecture certification stack. Check off steps as you go — progress saves automatically in your browser.</p>
+    <p class="hero-copy">Check off steps as you go. Each card shows your pre-flight requirements, progress through the course, and a cheat card that unlocks when you finish.</p>
   </div>
 </section>
 
 <section>
   <div class="container">
 
-    <!-- ── Summary band ──────────────────────────── -->
+    <!-- ── Summary band ─────────────────────────── -->
     <div class="dash-summary">
       <div class="dash-summary-score">
         <div class="dash-summary-count"><span id="summary-count">0</span><span class="dash-summary-of">/5</span></div>
@@ -40,10 +186,11 @@
       <div class="dash-summary-next">
         <div class="dash-summary-text" id="summary-text">Start with Google AI Essentials</div>
         <div class="dash-progress-bar dash-summary-bar"><div class="dash-progress-fill" id="summary-fill" style="width:0%"></div></div>
+        <div class="dash-summary-steps" id="summary-steps">0 / 40 steps</div>
       </div>
     </div>
 
-    <!-- ── Course 1 — Google AI Essentials ───────── -->
+    <!-- ── Course 1 — Google AI Essentials ──────── -->
     <div class="dash-course" id="course-google">
       <div class="dash-course-header">
         <div class="dash-course-header-left">
@@ -51,9 +198,19 @@
           <div class="dash-course-info">
             <div class="dash-course-title">Google AI Essentials</div>
             <div class="dash-course-meta">~8 hrs &middot; Self-paced &middot; Coursera &middot; Free</div>
+            <a href="https://www.coursera.org/learn/google-ai-essentials" target="_blank" rel="noopener" class="dash-enrol">Enrol on Coursera <span class="dash-enrol-arr">&rarr;</span></a>
           </div>
         </div>
-        <span class="badge badge-notstarted" id="badge-google">Not started</span>
+        <span class="dash-badge dash-badge-notstarted" id="badge-google">Not started</span>
+      </div>
+
+      <div class="dash-preflight">
+        <div class="dash-preflight-label">Pre-flight</div>
+        <ul class="dash-preflight-list">
+          <li>Free Google account (gmail.com)</li>
+          <li>Free Coursera account (coursera.org)</li>
+          <li>~8 hours of study time available</li>
+        </ul>
       </div>
 
       <div class="dash-progress-section">
@@ -66,19 +223,19 @@
 
       <ul class="dash-steps">
         <li><label><input type="checkbox" data-course="google" data-step="0"><span>Enrol on Google AI Essentials via Coursera</span></label></li>
-        <li><label><input type="checkbox" data-course="google" data-step="1"><span>Complete Module 1 — Introduction to AI</span></label></li>
-        <li><label><input type="checkbox" data-course="google" data-step="2"><span>Complete Module 2 — Using Google AI Tools</span></label></li>
-        <li><label><input type="checkbox" data-course="google" data-step="3"><span>Complete Module 3 — The Art of Prompt Engineering</span></label></li>
-        <li><label><input type="checkbox" data-course="google" data-step="4"><span>Complete Module 4 — Use AI Responsibly</span></label></li>
-        <li><label><input type="checkbox" data-course="google" data-step="5"><span>Complete Module 5 — Stay Ahead of the AI Curve</span></label></li>
+        <li><label><input type="checkbox" data-course="google" data-step="1"><span>Complete Module 1 &mdash; Introduction to AI</span></label></li>
+        <li><label><input type="checkbox" data-course="google" data-step="2"><span>Complete Module 2 &mdash; Using Google AI Tools</span></label></li>
+        <li><label><input type="checkbox" data-course="google" data-step="3"><span>Complete Module 3 &mdash; The Art of Prompt Engineering</span></label></li>
+        <li><label><input type="checkbox" data-course="google" data-step="4"><span>Complete Module 4 &mdash; Use AI Responsibly</span></label></li>
+        <li><label><input type="checkbox" data-course="google" data-step="5"><span>Complete Module 5 &mdash; Stay Ahead of the AI Curve</span></label></li>
         <li><label><input type="checkbox" data-course="google" data-step="6"><span>Pass all graded quizzes</span></label></li>
-        <li><label><input type="checkbox" data-course="google" data-step="7"><span>Claim certificate from Coursera / Google</span></label></li>
+        <li><label><input type="checkbox" data-course="google" data-step="7"><span>Claim Google AI Essentials certificate</span></label></li>
       </ul>
 
       <div class="dash-cert">
         <div class="dash-cert-label">Certificate</div>
         <strong>Google AI Essentials Certificate</strong>
-        <p>Issued by Google via Coursera. Completion-based — no separate exam. Shareable on LinkedIn.</p>
+        <p>Issued by Google via Coursera. Completion-based &mdash; no separate exam. Shareable on LinkedIn.</p>
       </div>
 
       <div class="dash-cheat" id="cheat-google">
@@ -88,53 +245,63 @@
         </div>
         <div class="dash-cheat-body">
           <div class="dash-cheat-rows">
-            <div class="dash-cheat-row"><span class="dash-cheat-key">AI types</span><span class="dash-cheat-val">Narrow AI (task-specific) · General AI (AGI, theoretical) · ML is a subset of AI</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">ML types</span><span class="dash-cheat-val">Supervised (labelled data) · Unsupervised (find patterns) · Reinforcement (reward signal)</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Prompting</span><span class="dash-cheat-val">Be specific · give context · specify format · iterate · zero-shot vs few-shot</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Responsible AI</span><span class="dash-cheat-val">Fairness · Reliability &amp; safety · Privacy &amp; security · Inclusiveness · Transparency · Accountability</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Google AI stack</span><span class="dash-cheat-val">Gemini (multimodal LLM) · NotebookLM (research) · Vertex AI (ML platform) · Workspace AI</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Hallucination</span><span class="dash-cheat-val">AI outputs false info confidently. Mitigate: verify outputs · grounding · RAG</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">AI types</span><span class="dash-cheat-val">Narrow AI (task-specific) &middot; AGI (theoretical) &middot; ML is a subset of AI &middot; LLMs are a form of Gen AI</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">ML types</span><span class="dash-cheat-val">Supervised (labelled data) &middot; Unsupervised (find patterns) &middot; Reinforcement (reward signal)</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Prompting</span><span class="dash-cheat-val">Be specific &middot; give context &middot; specify output format &middot; iterate &middot; zero-shot vs few-shot examples</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Responsible AI</span><span class="dash-cheat-val">Fairness &middot; Reliability &amp; safety &middot; Privacy &amp; security &middot; Inclusiveness &middot; Transparency &middot; Accountability</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Google AI stack</span><span class="dash-cheat-val">Gemini (multimodal LLM) &middot; NotebookLM (research) &middot; Vertex AI (ML platform) &middot; Workspace AI</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Hallucination</span><span class="dash-cheat-val">Model confidently outputs false info &mdash; mitigate with output verification, grounding, RAG, citations</span></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ── Course 2 — GitHub Foundations ─────────── -->
+    <!-- ── Course 2 — GitHub Foundations ────────── -->
     <div class="dash-course" id="course-github">
       <div class="dash-course-header">
         <div class="dash-course-header-left">
           <span class="dash-course-n">02</span>
           <div class="dash-course-info">
             <div class="dash-course-title">GitHub Foundations</div>
-            <div class="dash-course-meta">~12 hrs &middot; Self-study + PSI exam &middot; USD $99</div>
+            <div class="dash-course-meta">~12 hrs &middot; Self-study + PSI exam &middot; $99 USD</div>
+            <a href="https://github.com/orgs/skills/repositories" target="_blank" rel="noopener" class="dash-enrol">GitHub Skills <span class="dash-enrol-arr">&rarr;</span></a>
           </div>
         </div>
-        <span class="badge badge-notstarted" id="badge-github">Not started</span>
+        <span class="dash-badge dash-badge-notstarted" id="badge-github">Not started</span>
+      </div>
+
+      <div class="dash-preflight">
+        <div class="dash-preflight-label">Pre-flight</div>
+        <ul class="dash-preflight-list">
+          <li>GitHub account (github.com/join)</li>
+          <li>Git installed locally (git-scm.com)</li>
+          <li>$99 USD exam budget</li>
+          <li>~12 hours of study time available</li>
+        </ul>
       </div>
 
       <div class="dash-progress-section">
         <div class="dash-progress-header">
-          <span class="dash-progress-label" id="ptext-github">0 of 8 steps complete</span>
+          <span class="dash-progress-label" id="ptext-github">0 of 7 steps complete</span>
           <span class="dash-progress-pct" id="ppct-github">0%</span>
         </div>
         <div class="dash-progress-bar dash-course-bar"><div class="dash-progress-fill" id="fill-github" style="width:0%"></div></div>
       </div>
 
       <ul class="dash-steps">
-        <li><label><input type="checkbox" data-course="github" data-step="0"><span>Create or verify GitHub account</span></label></li>
-        <li><label><input type="checkbox" data-course="github" data-step="1"><span>Complete GitHub Skills: Introduction to GitHub</span></label></li>
-        <li><label><input type="checkbox" data-course="github" data-step="2"><span>Complete GitHub Skills: GitHub Pages</span></label></li>
-        <li><label><input type="checkbox" data-course="github" data-step="3"><span>Study repositories, branches, commits, PRs, and Issues</span></label></li>
-        <li><label><input type="checkbox" data-course="github" data-step="4"><span>Study GitHub Actions and GitHub Flow</span></label></li>
-        <li><label><input type="checkbox" data-course="github" data-step="5"><span>Review the GitHub Foundations exam objectives</span></label></li>
-        <li><label><input type="checkbox" data-course="github" data-step="6"><span>Register for exam via PSI (online proctored)</span></label></li>
-        <li><label><input type="checkbox" data-course="github" data-step="7"><span>Pass exam — score &ge; 68%</span></label></li>
+        <li><label><input type="checkbox" data-course="github" data-step="0"><span>Complete GitHub Skills: Introduction to GitHub</span></label></li>
+        <li><label><input type="checkbox" data-course="github" data-step="1"><span>Complete GitHub Skills: GitHub Pages</span></label></li>
+        <li><label><input type="checkbox" data-course="github" data-step="2"><span>Study repositories, branches, commits, PRs and Issues</span></label></li>
+        <li><label><input type="checkbox" data-course="github" data-step="3"><span>Study GitHub Actions and GitHub Flow</span></label></li>
+        <li><label><input type="checkbox" data-course="github" data-step="4"><span>Review the GitHub Foundations exam objectives</span></label></li>
+        <li><label><input type="checkbox" data-course="github" data-step="5"><span>Register for exam via PSI (online proctored)</span></label></li>
+        <li><label><input type="checkbox" data-course="github" data-step="6"><span>Pass exam &mdash; score &ge; 68%</span></label></li>
       </ul>
 
       <div class="dash-cert">
         <div class="dash-cert-label">Certificate</div>
         <strong>GitHub Foundations Certification</strong>
-        <p>Issued by GitHub (Microsoft). ~60 questions · 120 minutes · 68% passing threshold · valid 2 years.</p>
+        <p>Issued by GitHub (Microsoft). ~60 questions &middot; 120 minutes &middot; 68% passing threshold &middot; valid 2 years.</p>
       </div>
 
       <div class="dash-cheat" id="cheat-github">
@@ -144,54 +311,64 @@
         </div>
         <div class="dash-cheat-body">
           <div class="dash-cheat-rows">
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Core git</span><span class="dash-cheat-val">init · clone · add · commit -m · push · pull · branch · merge · status · log · diff · stash</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">GitHub objects</span><span class="dash-cheat-val">repo · branch · commit · PR · issue · fork · release · gist · package · project · discussion</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">GitHub Flow</span><span class="dash-cheat-val">branch &rarr; commit &rarr; open PR &rarr; review/discuss &rarr; approve &rarr; merge &rarr; deploy</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Actions YAML</span><span class="dash-cheat-val">on: [push/PR/schedule] &rarr; jobs: &rarr; runs-on: &rarr; steps: &rarr; uses:/run:</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Secrets</span><span class="dash-cheat-val">Settings &rarr; Secrets &rarr; reference as ${{ secrets.NAME }} in workflow files</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Exam</span><span class="dash-cheat-val">~60 Qs · 120 min · 68% pass · PSI online-proctored · USD $99 · valid 2 years</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Core git</span><span class="dash-cheat-val">init &middot; clone &middot; add &middot; commit -m &middot; push &middot; pull &middot; branch &middot; checkout &middot; merge &middot; stash &middot; log &middot; diff</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">GitHub objects</span><span class="dash-cheat-val">repo &middot; branch &middot; commit &middot; PR &middot; issue &middot; fork &middot; release &middot; gist &middot; package &middot; project &middot; discussion</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">GitHub Flow</span><span class="dash-cheat-val">branch &rarr; commit &rarr; open PR &rarr; review &amp; discuss &rarr; approve &rarr; merge &rarr; deploy</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Actions YAML</span><span class="dash-cheat-val">on: [push, pull_request] &rarr; jobs: &rarr; runs-on: ubuntu-latest &rarr; steps: &rarr; uses:/run:</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Secrets</span><span class="dash-cheat-val">Settings &rarr; Secrets &rarr; reference as $&#123;&#123; secrets.NAME &#125;&#125; in workflow YAML</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Exam</span><span class="dash-cheat-val">~60 Qs &middot; 120 min &middot; 68% pass &middot; PSI online proctored &middot; $99 USD &middot; valid 2 years</span></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ── Course 3 — Azure AI Fundamentals ──────── -->
+    <!-- ── Course 3 — Azure AI Fundamentals ─────── -->
     <div class="dash-course" id="course-azure">
       <div class="dash-course-header">
         <div class="dash-course-header-left">
           <span class="dash-course-n">03</span>
           <div class="dash-course-info">
             <div class="dash-course-title">Azure AI Fundamentals (AI-900)</div>
-            <div class="dash-course-meta">~20 hrs &middot; Microsoft Learn + Pearson VUE &middot; USD $165</div>
+            <div class="dash-course-meta">~20 hrs &middot; Microsoft Learn + Pearson VUE &middot; $165 USD</div>
+            <a href="https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/" target="_blank" rel="noopener" class="dash-enrol">Microsoft Learn <span class="dash-enrol-arr">&rarr;</span></a>
           </div>
         </div>
-        <span class="badge badge-notstarted" id="badge-azure">Not started</span>
+        <span class="dash-badge dash-badge-notstarted" id="badge-azure">Not started</span>
+      </div>
+
+      <div class="dash-preflight">
+        <div class="dash-preflight-label">Pre-flight</div>
+        <ul class="dash-preflight-list">
+          <li>Free Microsoft account (account.microsoft.com)</li>
+          <li>Free Azure subscription optional &mdash; labs run on free tier</li>
+          <li>$165 USD exam budget</li>
+          <li>~20 hours of study time available</li>
+        </ul>
       </div>
 
       <div class="dash-progress-section">
         <div class="dash-progress-header">
-          <span class="dash-progress-label" id="ptext-azure">0 of 9 steps complete</span>
+          <span class="dash-progress-label" id="ptext-azure">0 of 8 steps complete</span>
           <span class="dash-progress-pct" id="ppct-azure">0%</span>
         </div>
         <div class="dash-progress-bar dash-course-bar"><div class="dash-progress-fill" id="fill-azure" style="width:0%"></div></div>
       </div>
 
       <ul class="dash-steps">
-        <li><label><input type="checkbox" data-course="azure" data-step="0"><span>Create Microsoft Learn account</span></label></li>
-        <li><label><input type="checkbox" data-course="azure" data-step="1"><span>Complete learning path: AI Overview and AI Fundamentals</span></label></li>
-        <li><label><input type="checkbox" data-course="azure" data-step="2"><span>Complete learning path: Computer Vision on Azure</span></label></li>
-        <li><label><input type="checkbox" data-course="azure" data-step="3"><span>Complete learning path: Natural Language Processing on Azure</span></label></li>
-        <li><label><input type="checkbox" data-course="azure" data-step="4"><span>Complete learning path: Document Intelligence and Knowledge Mining</span></label></li>
-        <li><label><input type="checkbox" data-course="azure" data-step="5"><span>Complete learning path: Generative AI on Azure</span></label></li>
-        <li><label><input type="checkbox" data-course="azure" data-step="6"><span>Score &ge; 80% on all Microsoft Learn practice assessments</span></label></li>
-        <li><label><input type="checkbox" data-course="azure" data-step="7"><span>Schedule AI-900 exam via Pearson VUE (online or test centre)</span></label></li>
-        <li><label><input type="checkbox" data-course="azure" data-step="8"><span>Pass AI-900 — score &ge; 700 / 1000</span></label></li>
+        <li><label><input type="checkbox" data-course="azure" data-step="0"><span>Complete learning path: AI Overview and Fundamentals</span></label></li>
+        <li><label><input type="checkbox" data-course="azure" data-step="1"><span>Complete learning path: Computer Vision on Azure</span></label></li>
+        <li><label><input type="checkbox" data-course="azure" data-step="2"><span>Complete learning path: Natural Language Processing on Azure</span></label></li>
+        <li><label><input type="checkbox" data-course="azure" data-step="3"><span>Complete learning path: Document Intelligence and Knowledge Mining</span></label></li>
+        <li><label><input type="checkbox" data-course="azure" data-step="4"><span>Complete learning path: Generative AI on Azure</span></label></li>
+        <li><label><input type="checkbox" data-course="azure" data-step="5"><span>Score &ge; 80% on all Microsoft Learn practice assessments</span></label></li>
+        <li><label><input type="checkbox" data-course="azure" data-step="6"><span>Schedule AI-900 exam via Pearson VUE (online or test centre)</span></label></li>
+        <li><label><input type="checkbox" data-course="azure" data-step="7"><span>Pass AI-900 &mdash; score &ge; 700 / 1000</span></label></li>
       </ul>
 
       <div class="dash-cert">
         <div class="dash-cert-label">Certificate</div>
         <strong>Microsoft Certified: Azure AI Fundamentals</strong>
-        <p>Issued by Microsoft. ~50&ndash;60 questions · 60 minutes · 700/1000 to pass. Does not expire.</p>
+        <p>Issued by Microsoft. ~50&ndash;60 questions &middot; 60 minutes &middot; 700/1000 to pass. Does not expire.</p>
       </div>
 
       <div class="dash-cheat" id="cheat-azure">
@@ -201,55 +378,65 @@
         </div>
         <div class="dash-cheat-body">
           <div class="dash-cheat-rows">
-            <div class="dash-cheat-row"><span class="dash-cheat-key">AI workloads</span><span class="dash-cheat-val">Machine learning · Computer vision · NLP · Document intelligence · Knowledge mining · Generative AI</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Azure ML</span><span class="dash-cheat-val">Workspace &rarr; compute &rarr; dataset &rarr; train &rarr; evaluate &rarr; deploy endpoint &rarr; monitor</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Azure AI Services</span><span class="dash-cheat-val">Vision (OCR, face, object) · Language (CLU, QA, sentiment) · Speech (STT/TTS) · Decision</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Azure OpenAI</span><span class="dash-cheat-val">GPT-4o · DALL-E 3 · Whisper · Embeddings · deployed via Azure portal, not direct OpenAI</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Responsible AI</span><span class="dash-cheat-val">Fairness · Reliability/safety · Privacy/security · Inclusiveness · Transparency · Accountability</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Exam</span><span class="dash-cheat-val">~50&ndash;60 Qs · 60 min · 700/1000 pass · Pearson VUE · USD $165 · no expiry</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">AI workloads</span><span class="dash-cheat-val">Machine learning &middot; Computer vision &middot; NLP &middot; Document intelligence &middot; Knowledge mining &middot; Generative AI</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Azure ML</span><span class="dash-cheat-val">Workspace &rarr; compute &rarr; dataset &rarr; train (AutoML/designer/SDK) &rarr; evaluate &rarr; deploy endpoint &rarr; monitor</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Azure AI Services</span><span class="dash-cheat-val">Vision (OCR, face, object) &middot; Language (CLU, QA, sentiment) &middot; Speech (STT/TTS) &middot; Decision</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Azure OpenAI</span><span class="dash-cheat-val">GPT-4o &middot; DALL&middot;E 3 &middot; Whisper &middot; Embeddings &mdash; deployed via Azure portal, governed by Microsoft</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Responsible AI</span><span class="dash-cheat-val">Fairness &middot; Reliability/safety &middot; Privacy/security &middot; Inclusiveness &middot; Transparency &middot; Accountability</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Exam</span><span class="dash-cheat-val">~50&ndash;60 Qs &middot; 60 min &middot; 700/1000 pass &middot; Pearson VUE &middot; $165 USD &middot; no expiry</span></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ── Course 4 — AWS AI Practitioner ─────────── -->
+    <!-- ── Course 4 — AWS AI Practitioner ───────── -->
     <div class="dash-course" id="course-aws">
       <div class="dash-course-header">
         <div class="dash-course-header-left">
           <span class="dash-course-n">04</span>
           <div class="dash-course-info">
             <div class="dash-course-title">AWS AI Practitioner (AIF-C01)</div>
-            <div class="dash-course-meta">~25 hrs &middot; AWS Skill Builder + Pearson VUE &middot; USD $100</div>
+            <div class="dash-course-meta">~25 hrs &middot; AWS Skill Builder + Pearson VUE &middot; $100 USD</div>
+            <a href="https://aws.amazon.com/certification/certified-ai-practitioner/" target="_blank" rel="noopener" class="dash-enrol">AWS Certification <span class="dash-enrol-arr">&rarr;</span></a>
           </div>
         </div>
-        <span class="badge badge-notstarted" id="badge-aws">Not started</span>
+        <span class="dash-badge dash-badge-notstarted" id="badge-aws">Not started</span>
+      </div>
+
+      <div class="dash-preflight">
+        <div class="dash-preflight-label">Pre-flight</div>
+        <ul class="dash-preflight-list">
+          <li>Free AWS account (aws.amazon.com)</li>
+          <li>Free AWS Skill Builder account (skillbuilder.aws)</li>
+          <li>$100 USD exam budget</li>
+          <li>~25 hours of study time available</li>
+        </ul>
       </div>
 
       <div class="dash-progress-section">
         <div class="dash-progress-header">
-          <span class="dash-progress-label" id="ptext-aws">0 of 10 steps complete</span>
+          <span class="dash-progress-label" id="ptext-aws">0 of 9 steps complete</span>
           <span class="dash-progress-pct" id="ppct-aws">0%</span>
         </div>
         <div class="dash-progress-bar dash-course-bar"><div class="dash-progress-fill" id="fill-aws" style="width:0%"></div></div>
       </div>
 
       <ul class="dash-steps">
-        <li><label><input type="checkbox" data-course="aws" data-step="0"><span>Activate AWS Skill Builder account</span></label></li>
-        <li><label><input type="checkbox" data-course="aws" data-step="1"><span>Complete AWS AI Practitioner learning plan (Skill Builder)</span></label></li>
-        <li><label><input type="checkbox" data-course="aws" data-step="2"><span>Study Domain 1 — Fundamentals of AI and ML</span></label></li>
-        <li><label><input type="checkbox" data-course="aws" data-step="3"><span>Study Domain 2 — Fundamentals of Generative AI</span></label></li>
-        <li><label><input type="checkbox" data-course="aws" data-step="4"><span>Study Domain 3 — Applications of Foundation Models</span></label></li>
-        <li><label><input type="checkbox" data-course="aws" data-step="5"><span>Study Domain 4 — Guidelines for Responsible AI</span></label></li>
-        <li><label><input type="checkbox" data-course="aws" data-step="6"><span>Study Domain 5 — Security, Compliance, and Governance for AI</span></label></li>
-        <li><label><input type="checkbox" data-course="aws" data-step="7"><span>Complete the official AWS practice exam</span></label></li>
-        <li><label><input type="checkbox" data-course="aws" data-step="8"><span>Schedule AIF-C01 exam via Pearson VUE (online or test centre)</span></label></li>
-        <li><label><input type="checkbox" data-course="aws" data-step="9"><span>Pass AIF-C01 — score &ge; 700 / 1000</span></label></li>
+        <li><label><input type="checkbox" data-course="aws" data-step="0"><span>Complete AWS AI Practitioner learning plan (Skill Builder)</span></label></li>
+        <li><label><input type="checkbox" data-course="aws" data-step="1"><span>Study Domain 1 &mdash; Fundamentals of AI and ML</span></label></li>
+        <li><label><input type="checkbox" data-course="aws" data-step="2"><span>Study Domain 2 &mdash; Fundamentals of Generative AI</span></label></li>
+        <li><label><input type="checkbox" data-course="aws" data-step="3"><span>Study Domain 3 &mdash; Applications of Foundation Models</span></label></li>
+        <li><label><input type="checkbox" data-course="aws" data-step="4"><span>Study Domain 4 &mdash; Guidelines for Responsible AI</span></label></li>
+        <li><label><input type="checkbox" data-course="aws" data-step="5"><span>Study Domain 5 &mdash; Security, Compliance and Governance for AI</span></label></li>
+        <li><label><input type="checkbox" data-course="aws" data-step="6"><span>Complete the official AWS practice exam</span></label></li>
+        <li><label><input type="checkbox" data-course="aws" data-step="7"><span>Schedule AIF-C01 exam via Pearson VUE (online or test centre)</span></label></li>
+        <li><label><input type="checkbox" data-course="aws" data-step="8"><span>Pass AIF-C01 &mdash; score &ge; 700 / 1000</span></label></li>
       </ul>
 
       <div class="dash-cert">
         <div class="dash-cert-label">Certificate</div>
         <strong>AWS Certified AI Practitioner (AIF-C01)</strong>
-        <p>Issued by Amazon Web Services. 65 questions · 90 minutes · 700/1000 to pass · valid 3 years.</p>
+        <p>Issued by Amazon Web Services. 65 questions &middot; 90 minutes &middot; 700/1000 to pass &middot; valid 3 years.</p>
       </div>
 
       <div class="dash-cheat" id="cheat-aws">
@@ -259,18 +446,18 @@
         </div>
         <div class="dash-cheat-body">
           <div class="dash-cheat-rows">
-            <div class="dash-cheat-row"><span class="dash-cheat-key">ML pipeline</span><span class="dash-cheat-val">Collect &rarr; clean/label &rarr; train &rarr; tune &rarr; evaluate &rarr; deploy &rarr; monitor &rarr; retrain</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Gen AI concepts</span><span class="dash-cheat-val">Foundation model · parameters · fine-tuning · RLHF · RAG · embeddings · tokens · inference</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">AWS AI services</span><span class="dash-cheat-val">Bedrock (FMs) · SageMaker (MLOps) · Rekognition (vision) · Comprehend (NLP) · Transcribe · Polly · Translate · Kendra</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Amazon Bedrock</span><span class="dash-cheat-val">Serverless FM access · Agents · Knowledge Bases (RAG) · Guardrails · Model evaluation · Titan models</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Responsible AI</span><span class="dash-cheat-val">Fairness · Explainability · Privacy · Safety · Veracity/robustness · Transparency · Controllability</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Exam</span><span class="dash-cheat-val">65 Qs · 90 min · 700/1000 pass · Pearson VUE · USD $100 · valid 3 years</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">ML pipeline</span><span class="dash-cheat-val">Collect &rarr; clean/label &rarr; split &rarr; train &rarr; tune (HPO) &rarr; evaluate &rarr; deploy &rarr; monitor &rarr; retrain</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Gen AI concepts</span><span class="dash-cheat-val">Foundation model &middot; parameters &middot; fine-tuning &middot; RLHF &middot; RAG &middot; embeddings &middot; tokens &middot; inference &middot; temperature</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">AWS AI services</span><span class="dash-cheat-val">Bedrock (FMs) &middot; SageMaker (MLOps) &middot; Rekognition (vision) &middot; Comprehend (NLP) &middot; Transcribe &middot; Polly &middot; Kendra</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Amazon Bedrock</span><span class="dash-cheat-val">Serverless FM access &middot; Agents (reasoning loops) &middot; Knowledge Bases (RAG) &middot; Guardrails &middot; Titan models</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Responsible AI</span><span class="dash-cheat-val">Fairness &middot; Explainability &middot; Privacy &middot; Safety &middot; Veracity/robustness &middot; Transparency &middot; Controllability</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Exam</span><span class="dash-cheat-val">65 Qs (15 unscored) &middot; 90 min &middot; 700/1000 pass &middot; Pearson VUE &middot; $100 USD &middot; valid 3 years</span></div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ── Course 5 — CCA-F ───────────────────────── -->
+    <!-- ── Course 5 — CCA-F ──────────────────────── -->
     <div class="dash-course" id="course-cca">
       <div class="dash-course-header">
         <div class="dash-course-header-left">
@@ -278,9 +465,19 @@
           <div class="dash-course-info">
             <div class="dash-course-title">CCA-F &mdash; Claude Certified Architect: Foundations</div>
             <div class="dash-course-meta">~15 hrs &middot; Self-study + Anthropic exam &middot; TBC</div>
+            <a href="https://www.anthropic.com/learn" target="_blank" rel="noopener" class="dash-enrol">Anthropic Learn <span class="dash-enrol-arr">&rarr;</span></a>
           </div>
         </div>
-        <span class="badge badge-notstarted" id="badge-cca">Not started</span>
+        <span class="dash-badge dash-badge-notstarted" id="badge-cca">Not started</span>
+      </div>
+
+      <div class="dash-preflight">
+        <div class="dash-preflight-label">Pre-flight</div>
+        <ul class="dash-preflight-list">
+          <li>Claude.ai account (claude.ai)</li>
+          <li>Read the Anthropic model cards and usage policies (anthropic.com/policy)</li>
+          <li>~15 hours of study time available</li>
+        </ul>
       </div>
 
       <div class="dash-progress-section">
@@ -296,7 +493,7 @@
         <li><label><input type="checkbox" data-course="cca" data-step="1"><span>Study Claude API fundamentals and SDK usage</span></label></li>
         <li><label><input type="checkbox" data-course="cca" data-step="2"><span>Complete Claude Code getting-started labs</span></label></li>
         <li><label><input type="checkbox" data-course="cca" data-step="3"><span>Study prompt engineering techniques for Claude</span></label></li>
-        <li><label><input type="checkbox" data-course="cca" data-step="4"><span>Study tool use, function calling, and multi-agent patterns</span></label></li>
+        <li><label><input type="checkbox" data-course="cca" data-step="4"><span>Study tool use, function calling and multi-agent patterns</span></label></li>
         <li><label><input type="checkbox" data-course="cca" data-step="5"><span>Study Anthropic usage policies and responsible AI approach</span></label></li>
         <li><label><input type="checkbox" data-course="cca" data-step="6"><span>Complete CCA-F practice assessments</span></label></li>
         <li><label><input type="checkbox" data-course="cca" data-step="7"><span>Pass CCA-F exam (Anthropic)</span></label></li>
@@ -315,19 +512,19 @@
         </div>
         <div class="dash-cheat-body">
           <div class="dash-cheat-rows">
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Models</span><span class="dash-cheat-val">Haiku 4.5 (fast/cheap) · Sonnet 4.6 (balanced) · Opus 4.8 (most capable)</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">API essentials</span><span class="dash-cheat-val">POST /v1/messages · role: user|assistant · max_tokens required · temperature 0&ndash;1 · system param</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Context window</span><span class="dash-cheat-val">200K tokens · vision (images + PDFs) · streaming (stream: true) · prompt caching</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Prompting</span><span class="dash-cheat-val">XML tags (&lt;task&gt;&lt;context&gt;) · chain of thought · few-shot examples · role in system prompt</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Tool use</span><span class="dash-cheat-val">tools[] definition · tool_choice (auto/any/tool) · tool_result in next user turn</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Safety</span><span class="dash-cheat-val">Constitutional AI · AUP compliance · human-in-the-loop for high-stakes · prompt injection risks</span></div>
-            <div class="dash-cheat-row"><span class="dash-cheat-key">Claude Code</span><span class="dash-cheat-val">CLI tool · MCP servers · slash commands · hooks · CLAUDE.md memory · /compact · /review</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Models</span><span class="dash-cheat-val">Haiku 4.5 (fast/cheap) &middot; Sonnet 4.6 (balanced) &middot; Opus 4.8 (most capable, complex reasoning)</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">API essentials</span><span class="dash-cheat-val">POST /v1/messages &middot; model &middot; messages[&#123;role,content&#125;] &middot; max_tokens (required) &middot; system &middot; temperature 0&ndash;1</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Context window</span><span class="dash-cheat-val">200K tokens &middot; vision (images + PDFs inline) &middot; streaming (stream:true) &middot; prompt caching (cache_control)</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Prompting</span><span class="dash-cheat-val">XML tags &lt;task&gt;&lt;context&gt;&lt;examples&gt; &middot; chain of thought &middot; few-shot &middot; role in system &middot; clear output format</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Tool use</span><span class="dash-cheat-val">tools[] with name/description/input_schema &rarr; tool_use block &rarr; tool_result in next user turn</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Safety</span><span class="dash-cheat-val">Constitutional AI &middot; AUP compliance &middot; human-in-the-loop for high-stakes &middot; prompt injection awareness</span></div>
+            <div class="dash-cheat-row"><span class="dash-cheat-key">Claude Code</span><span class="dash-cheat-val">CLI + MCP servers &middot; slash commands (/review, /compact) &middot; hooks &middot; CLAUDE.md memory &middot; agent tasks</span></div>
           </div>
         </div>
       </div>
     </div>
 
-    <div style="text-align:center;margin-top:2rem;padding-bottom:0.5rem">
+    <div style="text-align:center;margin-top:2.5rem;padding-bottom:0.5rem">
       <button class="dash-reset" onclick="resetAll()">Reset all progress</button>
     </div>
 
@@ -355,17 +552,29 @@
 
 <script>
 const COURSES = ['google','github','azure','aws','cca'];
-const TOTALS  = {google:8, github:8, azure:9, aws:10, cca:8};
-const LABELS  = {google:'Google AI Essentials', github:'GitHub Foundations', azure:'Azure AI Fundamentals', aws:'AWS AI Practitioner', cca:'CCA-F'};
+const TOTALS  = {google:8, github:7, azure:8, aws:9, cca:8};
+const LABELS  = {
+  google: 'Google AI Essentials',
+  github: 'GitHub Foundations',
+  azure:  'Azure AI Fundamentals',
+  aws:    'AWS AI Practitioner',
+  cca:    'CCA-F'
+};
+const TOTAL_STEPS = Object.values(TOTALS).reduce(function(a,b){ return a+b; }, 0);
 
-function load(id)        { const r = localStorage.getItem('dash_v1_'+id); return r ? JSON.parse(r) : new Array(TOTALS[id]).fill(false); }
-function persist(id,arr) { localStorage.setItem('dash_v1_'+id, JSON.stringify(arr)); }
+function load(id) {
+  var r = localStorage.getItem('dash_v2_'+id);
+  return r ? JSON.parse(r) : new Array(TOTALS[id]).fill(false);
+}
+function persist(id, arr) {
+  localStorage.setItem('dash_v2_'+id, JSON.stringify(arr));
+}
 
 function renderCourse(id) {
-  const state = load(id);
-  const total = TOTALS[id];
-  const done  = state.filter(Boolean).length;
-  const pct   = total ? Math.round(done / total * 100) : 0;
+  var state = load(id);
+  var total = TOTALS[id];
+  var done  = state.filter(Boolean).length;
+  var pct   = total ? Math.round(done / total * 100) : 0;
 
   document.querySelectorAll('input[data-course="'+id+'"]').forEach(function(cb) {
     var i = parseInt(cb.dataset.step, 10);
@@ -384,16 +593,16 @@ function renderCourse(id) {
 
   var badge = document.getElementById('badge-'+id);
   if (badge) {
-    if (done === 0)         { badge.className = 'badge badge-notstarted'; badge.textContent = 'Not started'; }
-    else if (done >= total) { badge.className = 'badge badge-complete';   badge.textContent = 'Complete'; }
-    else                    { badge.className = 'badge badge-inprogress'; badge.textContent = 'In progress'; }
+    if (done === 0)         { badge.className = 'dash-badge dash-badge-notstarted'; badge.textContent = 'Not started'; }
+    else if (done >= total) { badge.className = 'dash-badge dash-badge-complete';   badge.textContent = 'Complete';    }
+    else                    { badge.className = 'dash-badge dash-badge-inprogress'; badge.textContent = 'In progress'; }
   }
 
   var card = document.getElementById('course-'+id);
   if (card) {
-    card.classList.remove('state-inprogress', 'state-complete');
-    if (done >= total)   card.classList.add('state-complete');
-    else if (done > 0)   card.classList.add('state-inprogress');
+    card.classList.remove('state-inprogress','state-complete');
+    if (done >= total)  card.classList.add('state-complete');
+    else if (done > 0)  card.classList.add('state-inprogress');
   }
 
   var cheat = document.getElementById('cheat-'+id);
@@ -401,26 +610,38 @@ function renderCourse(id) {
 }
 
 function renderSummary() {
-  var complete = COURSES.filter(function(id) { var s = load(id); return s.filter(Boolean).length >= TOTALS[id]; }).length;
-  document.getElementById('summary-count').textContent = complete;
-  document.getElementById('summary-fill').style.width  = Math.round(complete / 5 * 100) + '%';
+  var complete  = COURSES.filter(function(id){ return load(id).filter(Boolean).length >= TOTALS[id]; }).length;
+  var doneSteps = COURSES.reduce(function(s,id){ return s + load(id).filter(Boolean).length; }, 0);
+  var overallPct = Math.round(doneSteps / TOTAL_STEPS * 100);
+
+  var sc = document.getElementById('summary-count');
+  if (sc) sc.textContent = complete;
+
+  var sf = document.getElementById('summary-fill');
+  if (sf) sf.style.width = overallPct + '%';
+
+  var ss = document.getElementById('summary-steps');
+  if (ss) ss.textContent = doneSteps + ' / ' + TOTAL_STEPS + ' steps — ' + overallPct + '%';
 
   COURSES.forEach(function(id, idx) {
     var m = document.getElementById('milestone-'+idx);
     if (!m) return;
-    var s = load(id); var d = s.filter(Boolean).length;
+    var d = load(id).filter(Boolean).length;
     m.classList.remove('active','complete');
-    if (d >= TOTALS[id])   m.classList.add('complete');
-    else if (d > 0)        m.classList.add('active');
+    if (d >= TOTALS[id])  m.classList.add('complete');
+    else if (d > 0)       m.classList.add('active');
   });
 
-  var next = COURSES.find(function(id) { return load(id).filter(Boolean).length < TOTALS[id]; });
+  var next = COURSES.find(function(id){ return load(id).filter(Boolean).length < TOTALS[id]; });
   var st   = document.getElementById('summary-text');
+  if (!st) return;
   if (!next) {
     st.textContent = 'All 5 certifications complete.';
   } else {
-    var done = load(next).filter(Boolean).length;
-    st.textContent = done === 0 ? 'Start with ' + LABELS[next] : 'Next: ' + LABELS[next] + ' (' + done + '/' + TOTALS[next] + ' steps)';
+    var d = load(next).filter(Boolean).length;
+    st.textContent = d === 0
+      ? 'Start with ' + LABELS[next]
+      : 'Continue: '  + LABELS[next] + ' (' + d + ' / ' + TOTALS[next] + ' steps)';
   }
 }
 
@@ -441,7 +662,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function resetAll() {
   if (!confirm('Reset all progress? This cannot be undone.')) return;
-  COURSES.forEach(function(id) { localStorage.removeItem('dash_v1_'+id); });
+  COURSES.forEach(function(id){ localStorage.removeItem('dash_v2_'+id); });
   COURSES.forEach(renderCourse);
   renderSummary();
 }
