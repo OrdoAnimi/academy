@@ -715,6 +715,7 @@ footer {
   width: 17px;
   height: 17px;
   cursor: pointer;
+  pointer-events: none;
 }
 
 /* Certificate box */
