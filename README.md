@@ -33,6 +33,17 @@ Cloudflare Pages static deployment.
 | `/courses/` | Course catalogue |
 | `/courses/enterprise-architecture-foundations/` | Flagship EA course |
 | `/courses/enterprise-architecture-foundations/module-01.html` | Module 1: The ADM Cycle |
+| `/courses/enterprise-architecture-foundations/module-02.html` | Module 2: Architecture Vision |
+| `/courses/enterprise-architecture-foundations/module-03.html` | Module 3: BDAT Baseline and Gap Analysis |
+| `/courses/enterprise-architecture-foundations/module-04.html` | Module 4: Options Paper and Migration Roadmap |
+| `/courses/enterprise-architecture-foundations/module-05.html` | Module 5: Component Diagrams |
+| `/courses/enterprise-architecture-foundations/module-06.html` | Module 6: Sequence Diagrams |
+| `/courses/enterprise-architecture-foundations/module-07.html` | Module 7: Activity and Class Diagrams |
+| `/courses/enterprise-architecture-foundations/module-08.html` | Module 8: Reading ArchiMate |
+| `/courses/enterprise-architecture-foundations/module-09.html` | Module 9: Current and Target Architecture Views |
+| `/courses/enterprise-architecture-foundations/module-10.html` | Module 10: Capability Map and Stakeholder Story |
+| `/courses/enterprise-architecture-foundations/module-11.html` | Module 11: Executive Architecture Pack |
+| `/courses/enterprise-architecture-foundations/module-12.html` | Module 12: Mock EA Interview and Final Assessment |
 | `/library/` | Books, guides, and long-form knowledge |
 | `/library/reading-the-map/` | Reading the Map collection |
 | `/knowledge/` | Knowledge Portal |
@@ -68,7 +79,7 @@ Cloudflare Pages static deployment.
 | University shell | Live |
 | Courses catalogue | Live |
 | Enterprise Architecture Foundations | Live |
-| Module 1 | Live |
+| EA Foundations modules 1-12 | Live |
 | Library | Live |
 | Reading the Map collection | Live, expandable |
 | Knowledge Portal | Live |
@@ -108,7 +119,7 @@ Public static site. No user data collected. No backend. No authentication. No co
 
 ## Next steps
 
-- Add Module 2: Architecture Vision.
+- Verify all live module routes after Cloudflare deployment completes.
 - Correct Reading the Map chapter map against the manuscript.
 - Add real Medium links to the Knowledge Portal.
 - Add downloadable resource files.
