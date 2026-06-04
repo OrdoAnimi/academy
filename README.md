@@ -1,6 +1,6 @@
-# Velocity Architecture Academy
+# Velocity Academy
 
-Static site for the Velocity Architecture Academy: courses, library, knowledge portal, resources, certification, and ecosystem routing for the Velocity Architecture ecosystem.
+Static site for Velocity Academy: the front door and training ground for the wider Velocity Architecture ecosystem.
 
 ## Source of truth
 
@@ -12,7 +12,7 @@ Live domain: https://velocityarchitecture.com.au/
 
 ## Purpose
 
-Velocity Architecture Academy teaches decision-first architecture for the age of AI. It serves architecture leaders, practitioners, delivery teams, and AI-enabled enterprise teams.
+Velocity Academy teaches decision-first architecture for the age of AI. It serves architecture leaders, solution architects, enterprise architects, cloud advisors, AI-enabled delivery practitioners, and emerging Design Authorities.
 
 ## Deployment
 
@@ -30,6 +30,14 @@ Cloudflare Pages static deployment.
 |---|---|
 | `/` | Academy landing page |
 | `/site-map.html` | Public route map |
+| `/start-here/` | Academy purpose, audience, usage, and ecosystem orientation |
+| `/pathways/` | Role-based practitioner pathways |
+| `/pathways/solution-architecture-practitioner.html` | Solution Architecture Practitioner pathway |
+| `/pathways/enterprise-architecture-practitioner.html` | Enterprise Architecture Practitioner pathway |
+| `/pathways/ai-enabled-delivery-practitioner.html` | AI-Enabled Delivery Practitioner pathway |
+| `/framework/` | Framework concept bridge |
+| `/tools/` | Ecosystem tools map |
+| `/ecosystem/` | Ecosystem destination map |
 | `/courses/` | Course catalogue |
 | `/courses/enterprise-architecture-foundations/` | Flagship EA course |
 | `/courses/enterprise-architecture-foundations/module-01.html` | Module 1: The ADM Cycle |
@@ -51,7 +59,7 @@ Cloudflare Pages static deployment.
 | `/knowledge/articles/` | Article categories |
 | `/knowledge/concepts/` | Concept index |
 | `/knowledge/concepts/velocity-and-safe.html` | Velocity and SAFe concept note |
-| `/knowledge/medium/` | Medium archive placeholder |
+| `/knowledge/medium/` | Medium archive index |
 | `/resources/` | Practitioner resources |
 | `/certification/` | Pilot certification pathways |
 | `/ecosystem/github.html` | GitHub Build Estate |
@@ -64,6 +72,10 @@ Cloudflare Pages static deployment.
   site-map.html
   style.css
   _redirects
+  start-here/
+  pathways/
+  framework/
+  tools/
   courses/
   library/
   knowledge/
@@ -77,6 +89,10 @@ Cloudflare Pages static deployment.
 | Area | Status |
 |---|---|
 | University shell | Live |
+| Start Here | Live |
+| Practitioner pathways | Live |
+| Framework bridge | Live |
+| Tools map | Live |
 | Courses catalogue | Live |
 | Enterprise Architecture Foundations | Live |
 | EA Foundations modules 1-12 | Live |
@@ -85,6 +101,7 @@ Cloudflare Pages static deployment.
 | Knowledge Portal | Live |
 | Resources hub | Live, planned downloads |
 | Certification | Pilot / planned |
+| Ecosystem map | Live |
 | GitHub Build Estate | Live |
 
 ## Ecosystem role
@@ -97,7 +114,7 @@ Velocity decides.
 
 - ZenCloud: advisory and enterprise engagement
 - StudioSix: production, media, publishing, research, AI tools
-- Velocity Architecture Academy: learning, certification, books, knowledge portal, resources
+- Velocity Academy: learning, certification, books, knowledge portal, resources
 - Velocity Architecture Framework: framework authority site
 - EA Artefact Generator: tool layer
 

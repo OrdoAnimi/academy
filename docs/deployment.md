@@ -2,7 +2,7 @@
 
 ## Purpose
 
-Learning hub for Velocity Architecture Academy courses, certification pathways, practitioner resources, and learning routes.
+Learning hub for Velocity Academy courses, certification pathways, practitioner resources, and learning routes.
 
 ## Production
 

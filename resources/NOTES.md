@@ -2,7 +2,7 @@
 
 Live URL: https://velocityarchitecture.com.au/resources/
 
-This folder contains the public Resources section for Velocity Architecture Academy.
+This folder contains the public Resources section for Velocity Academy.
 
 Current status: resource hub page is live.
 

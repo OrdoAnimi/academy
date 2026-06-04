@@ -1,6 +1,6 @@
 # Library
 
-Purpose: long-form books, guides, manuscripts, and structured reference material for Velocity Architecture Academy.
+Purpose: long-form books, guides, manuscripts, and structured reference material for Velocity Academy.
 
 Live URL: https://velocityarchitecture.com.au/library/
 

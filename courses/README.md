@@ -1,6 +1,6 @@
 # Courses
 
-Purpose: structured learning paths for Velocity Architecture Academy.
+Purpose: structured learning paths for Velocity Academy.
 
 Live URL: https://velocityarchitecture.com.au/courses/
 
