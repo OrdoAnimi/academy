@@ -29,7 +29,7 @@ Cloudflare Pages static deployment.
 | Route | Purpose |
 |---|---|
 | `/` | Academy landing page |
-| `/site-map.html` | Public route map |
+| `/site-map/` | Public route map |
 | `/start-here/` | Academy purpose, audience, usage, and ecosystem orientation |
 | `/pathways/` | Role-based practitioner pathways |
 | `/pathways/solution-architecture-practitioner.html` | Solution Architecture Practitioner pathway |
