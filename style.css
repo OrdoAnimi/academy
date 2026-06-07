@@ -1,4 +1,4 @@
-@import url('/_tokens.css');
+﻿@import url('/_tokens.css');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -9,7 +9,7 @@
   --text:     #0F172A;
   --muted:    #475569;
   --border:   #E2E8F0;
-  --accent:   #E8630A;
+  --accent:   #00B4D8;
   --indigo:   #3730A3;
   --navy:     #1E3A5F;
   --font:     'DM Sans', system-ui, sans-serif;
@@ -24,9 +24,9 @@
   --vaf-text-2:         var(--muted);
   --vaf-text-3:         #94A3B8;
   --vaf-accent:         var(--accent);
-  --vaf-accent-hover:   #CC5508;
-  --vaf-accent-subtle:  #FFF7ED;
-  --vaf-accent-border:  #FED7AA;
+  --vaf-accent-hover:   #0096B4;
+  --vaf-accent-subtle:  rgba(0,180,216,0.08);
+  --vaf-accent-border:  rgba(0,180,216,0.3);
   --vaf-navy:           #1E3A5F;
   --vaf-navy-dark:      #162D4A;
   --vaf-font-heading:   'Playfair Display', Georgia, serif;
@@ -214,13 +214,13 @@ p { color: var(--muted); line-height: 1.7; }
   font-weight: 700;
   font-size: 0.9375rem;
   transition: background var(--vaf-transition), transform var(--vaf-transition), box-shadow var(--vaf-transition);
-  box-shadow: 0 2px 8px rgba(232,99,10,0.25);
+  box-shadow: 0 2px 8px rgba(0,180,216,0.25);
 }
 
 .btn-primary:hover {
   background: var(--vaf-accent-hover);
   transform: translateY(-2px);
-  box-shadow: 0 4px 16px rgba(232,99,10,0.35);
+  box-shadow: 0 4px 16px rgba(0,180,216,0.35);
 }
 
 .btn-outline {
@@ -360,7 +360,7 @@ p { color: var(--muted); line-height: 1.7; }
 
 .badge-available { background: #DCFCE7; color: #15803D; }
 .badge-planned   { background: #E0E7FF; color: var(--indigo); }
-.badge-seed      { background: #FFF7ED; color: var(--accent); }
+.badge-seed      { background: rgba(0,180,216,0.08); color: var(--accent); }
 .badge-future    { background: var(--bg-alt); color: var(--muted); }
 
 /* ── Library (dark band) ─────────────────────── */
@@ -398,7 +398,7 @@ p { color: var(--muted); line-height: 1.7; }
 .book-card h3 { color: white; margin-bottom: 0.5rem; }
 .book-card p  { color: #94A3B8; font-size: 0.875rem; }
 
-.book-card.labs { border-color: rgba(232,99,10,0.25); }
+.book-card.labs { border-color: rgba(0,180,216,0.25); }
 .book-card.labs .book-track { color: #94A3B8; }
 
 /* ── Resources ───────────────────────────────── */
@@ -420,7 +420,7 @@ p { color: var(--muted); line-height: 1.7; }
   width: 40px;
   height: 40px;
   border-radius: 8px;
-  background: #FFF7ED;
+  background: rgba(0,180,216,0.08);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -538,7 +538,7 @@ footer {
 
 /* ── Dashboard ───────────────────────────────── */
 .badge-complete   { background: #DCFCE7; color: #15803D; }
-.badge-inprogress { background: #FFF7ED; color: var(--accent); }
+.badge-inprogress { background: rgba(0,180,216,0.08); color: var(--accent); }
 .badge-notstarted { background: var(--bg-alt); color: var(--muted); }
 
 /* Summary band */
@@ -613,7 +613,7 @@ footer {
 }
 
 .dash-milestone.active {
-  background: rgba(232,99,10,0.18);
+  background: rgba(0,180,216,0.18);
   border-color: var(--accent);
   color: var(--accent);
 }
@@ -660,7 +660,7 @@ footer {
 }
 
 .dash-course-bar .dash-progress-fill {
-  background: linear-gradient(90deg, var(--accent) 0%, #FF7A2A 100%);
+  background: linear-gradient(90deg, var(--accent) 0%, #00D4F0 100%);
 }
 
 .dash-course.state-complete .dash-course-bar .dash-progress-fill { background: #22C55E; }
@@ -716,7 +716,7 @@ footer {
   transition: color 0.3s ease;
 }
 
-.dash-course.state-inprogress .dash-course-n { color: rgba(232,99,10,0.18); }
+.dash-course.state-inprogress .dash-course-n { color: rgba(0,180,216,0.18); }
 .dash-course.state-complete   .dash-course-n { color: rgba(34,197,94,0.22); }
 
 .dash-course-title {
@@ -827,8 +827,8 @@ footer {
   margin-top: 1.5rem;
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid rgba(232,99,10,0.3);
-  box-shadow: 0 0 0 4px rgba(232,99,10,0.06);
+  border: 1px solid rgba(0,180,216,0.3);
+  box-shadow: 0 0 0 4px rgba(0,180,216,0.06);
   display: none;
 }
 
@@ -843,7 +843,7 @@ footer {
 }
 
 .dash-cheat-header {
-  background: linear-gradient(135deg, var(--accent) 0%, #CC5508 100%);
+  background: linear-gradient(135deg, var(--accent) 0%, #0096B4 100%);
   padding: 1rem 1.5rem;
   display: flex;
   align-items: center;

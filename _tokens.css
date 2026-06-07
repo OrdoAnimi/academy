@@ -21,6 +21,9 @@
 }
 
 .ecosystem-strip {
+  position: static;
+  top: auto;
+  z-index: auto;
   background: var(--color-primary);
   color: var(--color-text-light);
   display: flex;
