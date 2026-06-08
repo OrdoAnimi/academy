@@ -1,6 +1,7 @@
 name: Link Integrity
 
 on:
+  pull_request:
   push:
     branches: [main]
   workflow_dispatch:
@@ -10,19 +11,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - name: Check internal links
         run: |
           python3 - <<'EOF'
           import re, sys
           from pathlib import Path
-
           root = Path('.').resolve()
-          html_files = sorted(
-              f for f in Path('.').rglob('*.html') if '.git' not in f.parts
-          )
+          html_files = sorted(f for f in Path('.').rglob('*.html') if '.git' not in f.parts)
           errors = []
-
           for html_file in html_files:
               content = html_file.read_text(encoding='utf-8', errors='ignore')
               for link in re.findall(r'(?:href|src)=["\']([^"\']+)["\']', content):
@@ -31,18 +27,15 @@ jobs:
                   path = link.split('#')[0].split('?')[0]
                   if not path:
                       continue
-                  if path.startswith('/'):
-                      target = (root / path.lstrip('/')).resolve()
-                  else:
-                      target = (html_file.parent / path).resolve()
+                  target = (root / path.lstrip('/')).resolve() if path.startswith('/') else (html_file.parent / path).resolve()
+                  if target.is_dir():
+                      target = target / 'index.html'
                   if not target.exists():
                       errors.append(f'{html_file}: {link}')
-
           if errors:
               print(f'Broken internal links ({len(errors)}):')
-              for e in errors:
-                  print(f'  {e}')
+              for error in errors:
+                  print(f'  {error}')
               sys.exit(1)
-
           print(f'All internal links OK ({len(html_files)} HTML files checked)')
           EOF

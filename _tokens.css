@@ -84,7 +84,11 @@
 }
 .ecosystem-footer__links a:hover { opacity: 1; }
 .ecosystem-footer__copy {
-  font-size: 0.75rem;
+  font-size: 0;
   color: var(--color-text-muted);
   margin-top: var(--space-sm);
+}
+.ecosystem-footer__copy::after {
+  content: '© 2026 Phil Myint / ZenCloud Global Consultants · Licensed CC BY 4.0 · Attribution required';
+  font-size: 0.75rem;
 }
