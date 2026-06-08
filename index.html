@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Velocity™ — ZenCloud Ecosystem</title>
-  <meta name="description" content="The ZenCloud ecosystem — senior architecture consulting, governed AI delivery, and decision-first frameworks for Australian organisations.">
+  <title>Velocity™ Academy — Architecture Learning for Practitioners</title>
+  <meta name="description" content="The learning academy for Velocity™ architecture practitioners. Courses, pathways, and certifications for enterprise architecture, solution architecture, and AI-enabled delivery.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://velocityarchitecture.com.au/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Velocity™ — ZenCloud Ecosystem">
-  <meta property="og:description" content="Senior architecture consulting, governed AI delivery, and decision-first frameworks.">
   <meta property="og:url" content="https://velocityarchitecture.com.au/">
+  <meta property="og:title" content="Velocity™ Academy">
+  <meta property="og:description" content="Architecture learning for practitioners — courses, pathways, and certifications powered by the Velocity™ framework.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -18,265 +18,9 @@
   <meta name="theme-color" content="#0f172a">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/_tokens.css">
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      background: #0f172a;
-      color: #f1f5f9;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* ── Site nav ── */
-    .site-nav {
-      background: rgba(15,23,42,0.96);
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      backdrop-filter: blur(16px);
-      position: sticky;
-      top: 0;
-      z-index: 20;
-    }
-
-    .site-nav-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 2rem;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .site-nav-brand {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: #f1f5f9;
-    }
-
-    .site-nav-brand span {
-      color: #E8630A;
-    }
-
-    .site-nav-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: rgba(241,245,249,0.4);
-    }
-
-    /* ── Hero ── */
-    .hero {
-      padding: 7rem 0 5rem;
-      position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0; height: 3px;
-      background: #E8630A;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: repeating-linear-gradient(
-        -45deg,
-        rgba(232,99,10,0.02) 0px,
-        rgba(232,99,10,0.02) 1px,
-        transparent 1px,
-        transparent 28px
-      );
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      max-width: 720px;
-    }
-
-    .hero-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #E8630A;
-      display: block;
-      margin-bottom: 1.25rem;
-    }
-
-    .hero h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.4rem, 5vw, 4rem);
-      font-weight: 700;
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      color: #f1f5f9;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero p {
-      font-size: 1.05rem;
-      font-weight: 300;
-      line-height: 1.75;
-      color: rgba(241,245,249,0.72);
-      max-width: 580px;
-    }
-
-    /* ── Practices grid ── */
-    .practices {
-      padding: 5rem 0 6rem;
-    }
-
-    .practices-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.6rem;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: #E8630A;
-      display: block;
-      margin-bottom: 0.75rem;
-    }
-
-    .practices-heading {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.5rem, 2.5vw, 2rem);
-      font-weight: 700;
-      color: #f1f5f9;
-      margin-bottom: 0.75rem;
-    }
-
-    .practices-sub {
-      font-size: 0.92rem;
-      font-weight: 300;
-      color: rgba(241,245,249,0.6);
-      max-width: 520px;
-      margin-bottom: 3rem;
-    }
-
-    .practices-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-
-    .practice-card {
-      background: #1e293b;
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 10px;
-      padding: 2rem 1.75rem;
-      display: flex;
-      flex-direction: column;
-      transition: border-color 0.2s, box-shadow 0.2s, transform 0.18s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .practice-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: #E8630A;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.22s ease;
-    }
-
-    .practice-card:hover {
-      border-color: rgba(232,99,10,0.4);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-      transform: translateY(-2px);
-    }
-
-    .practice-card:hover::before {
-      transform: scaleX(1);
-    }
-
-    .practice-role {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #E8630A;
-      margin-bottom: 0.85rem;
-    }
-
-    .practice-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #f1f5f9;
-      margin-bottom: 0.5rem;
-      line-height: 1.2;
-    }
-
-    .practice-domain {
-      font-family: 'DM Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.1em;
-      color: rgba(241,245,249,0.35);
-      margin-bottom: 1.25rem;
-    }
-
-    .practice-body {
-      font-size: 0.85rem;
-      font-weight: 300;
-      line-height: 1.7;
-      color: rgba(241,245,249,0.65);
-      flex: 1;
-      margin-bottom: 1.75rem;
-    }
-
-    .practice-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-family: 'DM Mono', monospace;
-      font-size: 0.62rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: #E8630A;
-      border: 1px solid rgba(232,99,10,0.3);
-      background: rgba(232,99,10,0.08);
-      padding: 0.6rem 1rem;
-      border-radius: 4px;
-      transition: background 0.18s, border-color 0.18s;
-      align-self: flex-start;
-    }
-
-    .practice-link:hover {
-      background: rgba(232,99,10,0.16);
-      border-color: rgba(232,99,10,0.55);
-    }
-
-    @media (max-width: 800px) {
-      .practices-grid { grid-template-columns: 1fr; }
-      .hero { padding: 5rem 0 4rem; }
-    }
-
-    @media (max-width: 560px) {
-      .site-nav-label { display: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
@@ -287,54 +31,231 @@
   <a href="https://velocityarchitectureframework.com" class="ecosystem-strip__link">Velocity™</a>
 </nav>
 
-<nav class="site-nav" aria-label="Primary navigation">
-  <div class="site-nav-inner">
-    <a href="/" class="site-nav-brand">Velocity<span>™</span></a>
-    <span class="site-nav-label">Australian Architecture Practice</span>
+<nav aria-label="Academy navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Velocity™ Academy</a>
+    <ul class="nav-links">
+      <li><a href="/start-here/">Start Here</a></li>
+      <li><a href="/pathways/">Pathways</a></li>
+      <li><a href="/courses/">Courses</a></li>
+      <li><a href="/certification/">Certification</a></li>
+    </ul>
+    <a href="/pathways/" class="nav-cta">Choose a Pathway</a>
   </div>
 </nav>
 
+<!-- ── Hero ── -->
 <section class="hero">
   <div class="container">
-    <div class="hero-inner">
-      <span class="hero-eyebrow">ZenCloud Ecosystem · Australia</span>
-      <h1>Architecture. Delivery.<br>Decision-first.</h1>
-      <p>Senior architecture consulting, AI-accelerated governed delivery, and a public decision-first framework — three connected practices serving Australian organisations and global clients from Australia.</p>
+    <div class="hero-bar"></div>
+    <h1>Velocity™ Academy</h1>
+    <p class="hero-sub">The learning home for architecture practitioners and AI-enabled delivery teams.</p>
+    <p class="hero-copy">Learn the Velocity™ decision-first method, practise with enterprise scenarios, produce real artefacts, and build the capability to govern delivery — not just describe it.</p>
+    <div class="btn-group">
+      <a href="/start-here/" class="btn-primary">Start here</a>
+      <a href="/pathways/" class="btn-outline">View pathways</a>
     </div>
   </div>
 </section>
 
-<section class="practices">
+<!-- ── What Academy teaches ── -->
+<section>
   <div class="container">
-    <span class="practices-label">Three practices. One ecosystem.</span>
-    <h2 class="practices-heading">Where do you need to go?</h2>
-    <p class="practices-sub">Each practice plays a distinct role. Most engagements start with ZenCloud Advisory.</p>
+    <p class="section-label">Academy Purpose</p>
+    <h2>From learning to governed delivery</h2>
+    <p class="intro-text">Velocity™ Academy is not a generic course catalogue. It is the learning layer for an architecture capability ecosystem — built for practitioners who need to move from concepts to decisions, artefacts, readiness evidence, and operating rhythm.</p>
+    <div class="teach-grid">
+      <div class="teach-item"><div class="teach-dot"></div><strong>Understand the Velocity™ framework</strong></div>
+      <div class="teach-item"><div class="teach-dot"></div><strong>Choose a role pathway</strong></div>
+      <div class="teach-item"><div class="teach-dot"></div><strong>Practise delivery scenarios</strong></div>
+      <div class="teach-item"><div class="teach-dot"></div><strong>Produce governed artefacts</strong></div>
+      <div class="teach-item"><div class="teach-dot"></div><strong>Apply decision-first methods</strong></div>
+      <div class="teach-item"><div class="teach-dot"></div><strong>Prepare certification evidence</strong></div>
+    </div>
+  </div>
+</section>
 
-    <div class="practices-grid">
+<!-- ── Pathways ── -->
+<section class="section-alt">
+  <div class="container">
+    <p class="section-label">Practitioner Pathways</p>
+    <h2>Choose a pathway within two clicks</h2>
+    <p class="intro-text">Each pathway connects learning outcomes to exercises, artefacts, Velocity™ framework concepts, and the next operating step. Start from the role you need to perform.</p>
+    <div class="cards-grid">
 
-      <a href="https://www.zencloud.com.au" class="practice-card">
-        <p class="practice-role">Advisory · Strategy</p>
-        <p class="practice-name">ZenCloud™</p>
-        <p class="practice-domain">zencloud.com.au</p>
-        <p class="practice-body">Senior architecture and technology advisory. Enterprise architecture, solution design, cloud strategy, AI governance, and program recovery. The front door for new engagements.</p>
-        <span class="practice-link">Visit ZenCloud →</span>
-      </a>
+      <div class="card">
+        <div class="card-head">
+          <h3><a href="/pathways/solution-architecture-practitioner.html">Solution Architecture Practitioner</a></h3>
+          <span class="badge badge-available">Available</span>
+        </div>
+        <p>For solution architects and delivery architects who need board-ready options, decisions, risks, and delivery guardrails. Covers context, options analysis, decision recording, and artefact production.</p>
+        <a class="text-link" href="/pathways/solution-architecture-practitioner.html">Open pathway →</a>
+      </div>
 
-      <a href="https://studiosix.com.au" class="practice-card">
-        <p class="practice-role">Delivery · Execution</p>
-        <p class="practice-name">StudioSix™</p>
-        <p class="practice-domain">studiosix.com.au</p>
-        <p class="practice-body">AI-accelerated, architect-governed delivery. Agents draft. The architect reviews. Clients receive controlled artefacts — decision trail intact, not raw AI output.</p>
-        <span class="practice-link">Visit StudioSix →</span>
-      </a>
+      <div class="card">
+        <div class="card-head">
+          <h3><a href="/pathways/enterprise-architecture-practitioner.html">Enterprise Architecture Practitioner</a></h3>
+          <span class="badge badge-available">Available</span>
+        </div>
+        <p>For enterprise architects shaping capability, portfolio decisions, transformation roadmaps, and governance cadence. Decision-first methods for strategic alignment and operating rhythm.</p>
+        <a class="text-link" href="/pathways/enterprise-architecture-practitioner.html">Open pathway →</a>
+      </div>
 
-      <a href="https://velocityarchitectureframework.com" class="practice-card">
-        <p class="practice-role">Framework · Knowledge</p>
-        <p class="practice-name">Velocity™</p>
-        <p class="practice-domain">velocityarchitectureframework.com</p>
-        <p class="practice-body">Public knowledge base for the Velocity decision-first architecture framework. Research, practitioner guides, diagnostics, templates, and publications — free to read.</p>
-        <span class="practice-link">Visit Velocity →</span>
-      </a>
+      <div class="card">
+        <div class="card-head">
+          <h3><a href="/pathways/ai-enabled-delivery-practitioner.html">AI-Enabled Delivery Practitioner</a></h3>
+          <span class="badge badge-available">Available</span>
+        </div>
+        <p>For architects, advisors, and delivery practitioners using AI to accelerate artefact creation with human review and traceability. Governed AI delivery from mandate to output.</p>
+        <a class="text-link" href="/pathways/ai-enabled-delivery-practitioner.html">Open pathway →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Module structure ── -->
+<section class="section-dark">
+  <div class="container">
+    <p class="section-label">Module Pattern</p>
+    <h2>Every module produces evidence</h2>
+    <p class="intro-text">Academy modules use a reusable structure: learning outcome, enterprise delivery relevance, core concepts, exercise, artefact or evidence, related framework concepts, and next module.</p>
+    <div class="lib-grid">
+      <div class="book-card">
+        <p class="book-track">Learn</p>
+        <h3>Concept to decision</h3>
+        <p>Practitioners learn the concept only far enough to use it in a governed delivery decision.</p>
+      </div>
+      <div class="book-card">
+        <p class="book-track">Practise</p>
+        <h3>Scenario to artefact</h3>
+        <p>Exercises convert delivery situations into briefs, options, roadmaps, decision logs, and review evidence.</p>
+      </div>
+      <div class="book-card">
+        <p class="book-track">Operate</p>
+        <h3>Artefact to ecosystem</h3>
+        <p>Outputs connect to Velocity™ framework guidance, readiness scoring, and governance workflows.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Course catalogue ── -->
+<section>
+  <div class="container">
+    <p class="section-label">Course Catalogue</p>
+    <h2>All available courses</h2>
+    <p class="intro-text">Structured curriculum for every architecture discipline — from foundational decision-first methods to advanced AI-enabled delivery and engineering practice.</p>
+    <div class="cards-grid">
+
+      <div class="card">
+        <div class="card-head">
+          <h3><a href="/courses/enterprise-architecture-foundations/">Enterprise Architecture Foundations</a></h3>
+          <span class="badge badge-seed">In progress</span>
+        </div>
+        <p>Foundational EA practice using the Velocity™ framework. Decision-first methods for portfolio, capability, and transformation governance. 12 structured modules.</p>
+        <a class="text-link" href="/courses/enterprise-architecture-foundations/">View course →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3><a href="https://zencloudau.github.io/vaf-python-zero-to-hero/" target="_blank" rel="noopener">Python Zero to Hero</a></h3>
+          <span class="badge badge-available">Available</span>
+        </div>
+        <p>Beginner-to-practitioner Python course for architecture automation, scripting, GitHub workflows, and AI-assisted delivery practice.</p>
+        <a class="text-link" href="https://zencloudau.github.io/vaf-python-zero-to-hero/" target="_blank" rel="noopener">Start course →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3><a href="https://zencloudau.github.io/vaf-typescript-zero-to-hero/" target="_blank" rel="noopener">TypeScript Zero to Hero</a></h3>
+          <span class="badge badge-available">Available</span>
+        </div>
+        <p>Beginner-to-practitioner TypeScript course for modern web apps, architecture tooling, React, static sites, and AI-assisted development.</p>
+        <a class="text-link" href="https://zencloudau.github.io/vaf-typescript-zero-to-hero/" target="_blank" rel="noopener">Start course →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3><a href="https://zencloudau.github.io/vaf-sa/" target="_blank" rel="noopener">Velocity™ Solution Architecture Method</a></h3>
+          <span class="badge badge-available">Available</span>
+        </div>
+        <p>The Velocity™ solution architecture method. Decision-first scoping, architecture board pack development, and delivery-ready outputs for governed engagements.</p>
+        <a class="text-link" href="https://zencloudau.github.io/vaf-sa/" target="_blank" rel="noopener">Open method →</a>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3>Agentic AI for Architecture</h3>
+          <span class="badge badge-seed">In progress</span>
+        </div>
+        <p>How architecture teams work with AI agents. Prompt engineering, artefact generation, AI-assisted governance, and practitioner ethics in AI-enabled delivery.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3>TOGAF Practitioner</h3>
+          <span class="badge badge-planned">Planned</span>
+        </div>
+        <p>Bridging the TOGAF standard with decision-first practices. Practical alignment of standard architectural methods with modern delivery pace.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3>Business Architecture</h3>
+          <span class="badge badge-planned">Planned</span>
+        </div>
+        <p>Capability mapping, operating model design, and value stream analysis. Connects business strategy to decision-ready architecture execution.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3>Data Readiness</h3>
+          <span class="badge badge-planned">Planned</span>
+        </div>
+        <p>Data as decision infrastructure. Readiness assessments, data governance architecture, and platform design for AI-enabled organisations.</p>
+      </div>
+
+      <div class="card">
+        <div class="card-head">
+          <h3>Security Architecture</h3>
+          <span class="badge badge-planned">Planned</span>
+        </div>
+        <p>Security as decision architecture. Threat modelling, control design, and secure-by-design principles embedded into delivery practice.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Ecosystem ── -->
+<section class="section-alt">
+  <div class="container">
+    <p class="section-label">ZenCloud Ecosystem</p>
+    <h2>Academy is the learning layer</h2>
+    <p class="intro-text">Velocity™ Academy develops the practitioners. The wider ZenCloud ecosystem delivers the work — from senior advisory through to governed AI delivery and public framework documentation.</p>
+    <div class="eco-grid">
+
+      <div class="eco-card">
+        <p class="eco-role">Advisory · Strategy</p>
+        <p class="eco-name"><a href="https://www.zencloud.com.au" style="color:inherit;">ZenCloud™</a></p>
+        <p>Senior architecture and technology advisory for Australian organisations. Enterprise architecture, cloud strategy, AI governance, and program recovery.</p>
+        <a class="text-link" href="https://www.zencloud.com.au">Visit ZenCloud →</a>
+      </div>
+
+      <div class="eco-card">
+        <p class="eco-role">Delivery · Execution</p>
+        <p class="eco-name"><a href="https://studiosix.com.au" style="color:inherit;">StudioSix™</a></p>
+        <p>AI-accelerated, architect-governed delivery. Agents draft. The architect reviews. Clients receive controlled artefacts with a clear decision trail.</p>
+        <a class="text-link" href="https://studiosix.com.au">Visit StudioSix →</a>
+      </div>
+
+      <div class="eco-card">
+        <p class="eco-role">Framework · Knowledge</p>
+        <p class="eco-name"><a href="https://velocityarchitectureframework.com" style="color:inherit;">Velocity™</a></p>
+        <p>Public knowledge base for the Velocity™ decision-first architecture framework. Research, practitioner guides, diagnostics, and publications — free to read.</p>
+        <a class="text-link" href="https://velocityarchitectureframework.com">Visit Velocity™ →</a>
+      </div>
 
     </div>
   </div>

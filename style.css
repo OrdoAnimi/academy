@@ -3,40 +3,40 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:       #F8FAFC;
-  --bg-alt:   #F1F5F9;
-  --white:    #FFFFFF;
-  --text:     #0F172A;
-  --muted:    #475569;
-  --border:   #E2E8F0;
+  --bg:       #0f172a;
+  --bg-alt:   #162032;
+  --white:    #1e293b;
+  --text:     #f1f5f9;
+  --muted:    rgba(241,245,249,0.65);
+  --border:   rgba(255,255,255,0.08);
   --accent:   #E8630A;
-  --indigo:   #3730A3;
-  --navy:     #1E3A5F;
+  --indigo:   #818cf8;
+  --navy:     #0a0f1a;
   --font:     'DM Sans', system-ui, sans-serif;
 
-  /* VAF master design system tokens */
+  /* ZenCloud master design system tokens */
   --vaf-bg:             var(--bg);
   --vaf-surface:        var(--white);
   --vaf-surface-raised: var(--bg-alt);
   --vaf-border:         var(--border);
-  --vaf-border-strong:  #CBD5E1;
+  --vaf-border-strong:  rgba(255,255,255,0.14);
   --vaf-text:           var(--text);
   --vaf-text-2:         var(--muted);
-  --vaf-text-3:         #94A3B8;
+  --vaf-text-3:         rgba(241,245,249,0.38);
   --vaf-accent:         var(--accent);
   --vaf-accent-hover:   #CC5508;
-  --vaf-accent-subtle:  rgba(232,99,10,0.08);
-  --vaf-accent-border:  rgba(232,99,10,0.3);
-  --vaf-navy:           #1E3A5F;
-  --vaf-navy-dark:      #162D4A;
+  --vaf-accent-subtle:  rgba(232,99,10,0.1);
+  --vaf-accent-border:  rgba(232,99,10,0.28);
+  --vaf-navy:           #0f172a;
+  --vaf-navy-dark:      #0a0f1a;
   --vaf-font-heading:   'Playfair Display', Georgia, serif;
   --vaf-font-body:      var(--font);
   --vaf-font-mono:      'DM Mono', ui-monospace, monospace;
   --vaf-radius-sm:      4px;
   --vaf-radius-md:      8px;
   --vaf-radius-lg:      10px;
-  --vaf-shadow:         0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
-  --vaf-shadow-md:      0 4px 12px rgba(15,23,42,0.08), 0 2px 4px rgba(15,23,42,0.04);
+  --vaf-shadow:         0 2px 8px rgba(0,0,0,0.3);
+  --vaf-shadow-md:      0 8px 24px rgba(0,0,0,0.4);
   --vaf-transition:     200ms ease;
 }
 
@@ -49,10 +49,10 @@ body {
 
 /* ── Navigation ─────────────────────────────── */
 nav {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(15,23,42,0.96);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
   padding: 0 2rem;
   position: sticky;
   top: 0;
@@ -71,7 +71,7 @@ nav {
 .nav-brand {
   font-weight: 700;
   font-size: 0.9375rem;
-  color: var(--text);
+  color: #f1f5f9;
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
@@ -165,7 +165,7 @@ p { color: var(--muted); line-height: 1.7; }
   margin-bottom: 0;
 }
 
-.section-alt { background: var(--bg-alt); }
+.section-alt { background: var(--bg-alt); border-top: 1px solid var(--border); }
 
 /* ── Hero ────────────────────────────────────── */
 .hero {
@@ -358,19 +358,20 @@ p { color: var(--muted); line-height: 1.7; }
   margin-top: 2px;
 }
 
-.badge-available { background: #DCFCE7; color: #15803D; }
-.badge-planned   { background: #E0E7FF; color: var(--indigo); }
-.badge-seed      { background: rgba(232,99,10,0.08); color: var(--accent); }
-.badge-future    { background: var(--bg-alt); color: var(--muted); }
+.badge-available { background: rgba(34,197,94,0.12); color: #4ade80; border: 1px solid rgba(34,197,94,0.2); }
+.badge-planned   { background: rgba(129,140,248,0.12); color: #a5b4fc; border: 1px solid rgba(129,140,248,0.2); }
+.badge-seed      { background: rgba(232,99,10,0.12); color: var(--accent); border: 1px solid rgba(232,99,10,0.2); }
+.badge-future    { background: rgba(255,255,255,0.06); color: rgba(241,245,249,0.45); }
 
-/* ── Library (dark band) ─────────────────────── */
+/* ── Library (accent band) ───────────────────── */
 .section-dark {
   background: var(--navy);
+  border-top: 3px solid var(--accent);
 }
 
-.section-dark .section-label { color: #93C5FD; }
-.section-dark h2              { color: white; }
-.section-dark .intro-text     { color: #CBD5E1; }
+.section-dark .section-label { color: var(--accent); }
+.section-dark h2              { color: #f1f5f9; }
+.section-dark .intro-text     { color: rgba(241,245,249,0.72); }
 
 .lib-grid {
   display: grid;
