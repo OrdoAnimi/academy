@@ -1,8 +1,8 @@
 :root {
-  --color-primary: #0F1E2E;
+  --color-primary: #0f172a;
   --color-accent: #E8630A;
-  --color-surface: #F8FAFC;
-  --color-panel: #1A2B3C;
+  --color-surface: #1e293b;
+  --color-panel: #1e293b;
   --color-text-primary: #0F1E2E;
   --color-text-light: #F8FAFC;
   --color-text-muted: #64748B;
@@ -84,11 +84,7 @@
 }
 .ecosystem-footer__links a:hover { opacity: 1; }
 .ecosystem-footer__copy {
-  font-size: 0;
+  font-size: 0.75rem;
   color: var(--color-text-muted);
   margin-top: var(--space-sm);
-}
-.ecosystem-footer__copy::after {
-  content: '© 2026 Phil Myint / ZenCloud Global Consultants · Licensed CC BY 4.0 · Attribution required';
-  font-size: 0.75rem;
 }
