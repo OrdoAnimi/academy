@@ -14,4 +14,7 @@ The site has no backend or authentication. The optional dashboard stores progres
 
 ## Licence
 
-Content is licensed under CC BY 4.0. Attribution is required. See `LICENSE.md`.
+This repository is proprietary. All rights reserved. No part may be copied, distributed, modified or used for commercial purposes without prior written permission from ZenCloud Global Consultants. See [LICENSE](LICENSE).
+
+---
+© 2026 ZenCloud Global Consultants. All rights reserved. Proprietary and confidential.
