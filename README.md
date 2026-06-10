@@ -14,7 +14,7 @@ The site has no backend or authentication. The optional dashboard stores progres
 
 ## Licence
 
-This repository is proprietary. All rights reserved. No part may be copied, distributed, modified or used for commercial purposes without prior written permission from ZenCloud Global Consultants. See [LICENSE](LICENSE).
+This repository is proprietary. All rights reserved. No part may be copied, distributed, modified or used for commercial purposes without prior written permission from Zencloud Advisory. See [LICENSE](LICENSE).
 
 ---
-© 2026 ZenCloud Global Consultants. All rights reserved. Proprietary and confidential.
+© 2026 Zencloud Advisory. All rights reserved. Proprietary and confidential.
