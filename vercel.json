@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    { "source": "/github", "destination": "/ecosystem/github.html", "permanent": true },
+    { "source": "/sitemap", "destination": "/site-map/", "permanent": true },
+    { "source": "/site-map.html", "destination": "/site-map/", "permanent": true },
+    { "source": "/certifications", "destination": "/certification/", "permanent": true },
+    { "source": "/course/enterprise-architecture-foundations", "destination": "/courses/enterprise-architecture-foundations/", "permanent": true },
+    { "source": "/module-:num(\\d+)", "destination": "/courses/enterprise-architecture-foundations/module-:num.html", "permanent": true }
+  ]
+}
