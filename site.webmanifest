@@ -1,11 +1,11 @@
 {
-  "name": "Velocity Academy",
-  "short_name": "Velocity",
-  "description": "Training ground for decision-first architecture and AI-enabled delivery practice.",
+  "name": "OrdoAnimi Academy",
+  "short_name": "OrdoAnimi",
+  "description": "The learning layer for decision-first architecture and AI-enabled delivery practice.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#F8FAFC",
-  "theme_color": "#1E3A5F",
+  "background_color": "#F2EDE0",
+  "theme_color": "#16231C",
   "icons": [
     {
       "src": "/favicon-192.png",

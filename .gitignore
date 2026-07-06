@@ -16,3 +16,6 @@ Thumbs.db
 
 # Local dev tooling
 .claude/
+
+.vercel
+.env*
