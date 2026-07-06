@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Architect Tracker — Velocity Academy</title>
+  <title>AI Architect Tracker — OrdoAnimi Academy</title>
   <meta name="description" content="Track your progress across five AI architecture certifications: Google AI Essentials, GitHub Foundations, Azure AI Fundamentals, AWS AI Practitioner, and CCA-F.">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#0f172a">
+  <meta name="theme-color" content="#16231c">
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -19,53 +19,53 @@
     /* ── Dark page theme ─────────────────────────── */
     body { background: #080F1E; }
 
-    nav  { background: #0C1628; border-bottom-color: rgba(255,255,255,0.07); }
-    .nav-brand      { color: #F1F5F9; }
+    nav  { background: #0C1628; border-bottom-color: rgba(250,247,239,0.07); }
+    .nav-brand      { color: #ebe4d2; }
     .nav-links a    { color: #3D4F63; }
-    .nav-links a:hover { color: #E8630A; }
+    .nav-links a:hover { color: #b58a34; }
 
     /* ── Summary band ─────────────────────────────── */
     .dash-summary       { background: #0C1628; }
-    .dash-summary-of    { color: #1E293B; }
-    .dash-summary-label { color: #1E293B; }
+    .dash-summary-of    { color: #16231c; }
+    .dash-summary-label { color: #16231c; }
     .dash-summary-text  { color: #2D3F52; }
 
     /* ── Course cards ─────────────────────────────── */
     .dash-course {
       background: #0F1929;
-      border-color: rgba(255,255,255,0.07);
-      border-top-color: rgba(255,255,255,0.07);
+      border-color: rgba(250,247,239,0.07);
+      border-top-color: rgba(250,247,239,0.07);
     }
-    .dash-course.state-inprogress { border-top-color: #E8630A; box-shadow: 0 2px 24px rgba(232,99,10,0.08); }
+    .dash-course.state-inprogress { border-top-color: #b58a34; box-shadow: 0 2px 24px rgba(181,138,52,0.08); }
     .dash-course.state-complete   { border-top-color: #22C55E; box-shadow: 0 2px 24px rgba(34,197,94,0.08);  }
-    .dash-course-header  { border-bottom-color: rgba(255,255,255,0.07); }
-    .dash-course-title   { color: #F1F5F9; }
+    .dash-course-header  { border-bottom-color: rgba(250,247,239,0.07); }
+    .dash-course-title   { color: #ebe4d2; }
     .dash-course-meta    { color: #374151; }
-    .dash-course-n       { color: rgba(255,255,255,0.05); }
-    .dash-course.state-inprogress .dash-course-n { color: rgba(232,99,10,0.14); }
+    .dash-course-n       { color: rgba(250,247,239,0.05); }
+    .dash-course.state-inprogress .dash-course-n { color: rgba(181,138,52,0.14); }
     .dash-course.state-complete   .dash-course-n { color: rgba(34,197,94,0.17);  }
 
     /* ── Progress ─────────────────────────────────── */
-    .dash-progress-label { color: #94A3B8; }
-    .dash-progress-pct   { color: #E8630A; }
+    .dash-progress-label { color: #8c9184; }
+    .dash-progress-pct   { color: #b58a34; }
     .dash-course.state-complete .dash-progress-pct { color: #22C55E; }
-    .dash-course-bar     { background: rgba(255,255,255,0.05); }
+    .dash-course-bar     { background: rgba(250,247,239,0.05); }
 
     /* ── Steps ────────────────────────────────────── */
-    .dash-steps li            { border-bottom-color: rgba(255,255,255,0.055); }
+    .dash-steps li            { border-bottom-color: rgba(250,247,239,0.055); }
     .dash-steps li label      { color: #3D4F63; }
-    .dash-steps li label:hover{ color: #CBD5E1; }
+    .dash-steps li label:hover{ color: #c9bfa6; }
     .dash-steps li.done label { color: #1B2840; }
 
     /* ── Certificate box ──────────────────────────── */
-    .dash-cert          { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.07); }
+    .dash-cert          { background: rgba(250,247,239,0.03); border-color: rgba(250,247,239,0.07); }
     .dash-cert-label    { color: #7DD3FC; }
-    .dash-cert strong   { color: #E2E8F0; }
+    .dash-cert strong   { color: #ded7c4; }
     .dash-cert p        { color: #2D3F52; }
 
     /* ── Reset ────────────────────────────────────── */
-    .dash-reset       { border-color: rgba(255,255,255,0.08); color: #1E293B; }
-    .dash-reset:hover { border-color: rgba(255,255,255,0.18); color: #475569; }
+    .dash-reset       { border-color: rgba(250,247,239,0.08); color: #16231c; }
+    .dash-reset:hover { border-color: rgba(250,247,239,0.18); color: #5a6354; }
 
     /* ── Status badge (dark variant) ─────────────── */
     .dash-badge {
@@ -78,8 +78,8 @@
       white-space: nowrap;
       flex-shrink: 0;
     }
-    .dash-badge-notstarted { background: rgba(255,255,255,0.05); color: #374151; }
-    .dash-badge-inprogress { background: rgba(232,99,10,0.1); color: #E8630A; border: 1px solid rgba(232,99,10,0.2); }
+    .dash-badge-notstarted { background: rgba(250,247,239,0.05); color: #374151; }
+    .dash-badge-inprogress { background: rgba(181,138,52,0.1); color: #b58a34; border: 1px solid rgba(181,138,52,0.2); }
     .dash-badge-complete   { background: rgba(34,197,94,0.1);  color: #22C55E; border: 1px solid rgba(34,197,94,0.22); }
 
     /* ── Enrol button ─────────────────────────────── */
@@ -87,7 +87,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.375rem;
-      background: #E8630A;
+      background: #b58a34;
       color: white;
       text-decoration: none;
       font-size: 0.8125rem;
@@ -99,10 +99,10 @@
       width: fit-content;
     }
     .dash-enrol:hover {
-      background: #CC5508;
+      background: #8c6a26;
       color: white;
       transform: translateY(-1px);
-      box-shadow: 0 4px 14px rgba(232,99,10,0.35);
+      box-shadow: 0 4px 14px rgba(181,138,52,0.35);
     }
     .dash-enrol-arr { display: inline-block; transition: transform 0.15s; }
     .dash-enrol:hover .dash-enrol-arr { transform: translateX(3px); }
@@ -152,7 +152,7 @@
     /* ── Summary steps counter ────────────────────── */
     .dash-summary-steps {
       font-size: 0.75rem;
-      color: #1E293B;
+      color: #16231c;
       margin-top: 0.4375rem;
     }
 
@@ -163,9 +163,7 @@
   </style>
 </head>
 <body>
-<nav class="ecosystem-strip" aria-label="Ecosystem navigation"><span class="ecosystem-strip__label">ZenCloud Ecosystem</span><a href="https://www.zencloud.com.au" class="ecosystem-strip__link">ZenCloud™</a><a href="https://studiosix.com.au" class="ecosystem-strip__link">StudioSix™</a><a href="https://velocityarchitectureframework.com" class="ecosystem-strip__link">Velocity™</a></nav>
-
-<nav><div class="nav-inner"><a href="/" class="nav-brand">Velocity™ Academy</a><ul class="nav-links"><li><a href="/start-here/">Start Here</a></li><li><a href="/pathways/">Pathways</a></li><li><a href="/framework/">Framework</a></li><li><a href="/tools/">Tools</a></li><li><a href="/certification/">Certifications</a></li></ul><a href="/pathways/" class="nav-cta">Choose a Pathway</a></div></nav>
+<nav><div class="nav-inner"><a href="/" class="nav-brand">OrdoAnimi Academy</a><ul class="nav-links"><li><a href="/start-here/">Start Here</a></li><li><a href="/pathways/">Pathways</a></li><li><a href="/framework/">Framework</a></li><li><a href="/tools/">Tools</a></li><li><a href="/certification/">Certifications</a></li></ul><a href="/pathways/" class="nav-cta">Choose a Pathway</a></div></nav>
 
 <section class="hero">
   <div class="container">
@@ -541,7 +539,7 @@
   </div>
 </section>
 
-<footer class="ecosystem-footer"><div class="ecosystem-footer__brand"><p class="ecosystem-footer__tagline">The ZenCloud ecosystem — Strategy. Delivery. Architecture.</p></div><nav class="ecosystem-footer__links" aria-label="Ecosystem footer links"><a href="https://www.zencloud.com.au">ZenCloud™</a><a href="https://studiosix.com.au">StudioSix™</a><a href="https://velocityarchitectureframework.com">Velocity™</a></nav><p class="ecosystem-footer__copy">© 2026 ZenCloud Global Consultants · All rights reserved</p></footer>
+<footer class="ecosystem-footer"><div class="ecosystem-footer__brand"><p class="ecosystem-footer__tagline">OrdoAnimi — writing on architecture, technology, and the profession.</p></div><nav class="ecosystem-footer__links" aria-label="Ecosystem footer links"><a href="https://www.ordoanimi.com">OrdoAnimi</a><a href="https://framework.ordoanimi.com">Framework</a><a href="https://architecture.ordoanimi.com">Architecture</a></nav><p class="ecosystem-footer__copy">© 2026 OrdoAnimi · Phil Myint · Brisbane, Australia</p></footer>
 
 <script>
 const COURSES = ['google','github','azure','aws','cca'];
