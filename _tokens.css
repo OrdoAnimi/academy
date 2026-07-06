@@ -7,9 +7,9 @@
   --color-text-light: #f2ede0;
   --color-text-muted: #6e7460;
   --color-border: #ded7c4;
-  --font-heading: 'Inter', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-heading: 'Archivo Black', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-mono: 'DM Mono', monospace;
   --space-xs: 0.5rem;
   --space-sm: 1rem;
   --space-md: 1.5rem;
@@ -54,6 +54,7 @@
 }
 
 .ecosystem-footer {
+  border-top: 3px solid var(--color-accent);
   background: var(--color-primary);
   color: var(--color-text-light);
   padding: var(--space-xl) var(--space-lg);

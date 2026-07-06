@@ -29,7 +29,7 @@
   --vaf-accent-border:  rgba(181,138,52,0.22);
   --vaf-navy:           #16231c;
   --vaf-navy-dark:      #0f1712;
-  --vaf-font-heading:   'Playfair Display', Georgia, serif;
+  --vaf-font-heading:   'Archivo Black', sans-serif;
   --vaf-font-body:      var(--font);
   --vaf-font-mono:      'DM Mono', ui-monospace, monospace;
   --vaf-radius-sm:      4px;
@@ -47,13 +47,12 @@ body {
   line-height: 1.6;
 }
 
-/* Navigation */
+/* Navigation — OrdoAnimi estate nav */
 nav {
-  background: rgba(250,247,239,0.97);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid #ded7c4;
-  box-shadow: 0 1px 4px rgba(22,35,28,0.06);
+  background: rgba(22,35,28,0.96);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(250,247,239,0.12);
   padding: 0 2rem;
   position: sticky;
   top: 0;
@@ -65,14 +64,15 @@ nav {
   margin: 0 auto;
   display: flex;
   align-items: center;
-  height: 64px;
+  height: 56px;
   gap: 2rem;
 }
 
 .nav-brand {
-  font-weight: 700;
-  font-size: 0.9375rem;
-  color: #16231c;
+  font-family: 'Archivo Black', sans-serif;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  color: #faf7ef;
   text-decoration: none;
   white-space: nowrap;
   flex-shrink: 0;
@@ -86,33 +86,32 @@ nav {
 }
 
 .nav-links a {
-  color: #6e7460;
+  color: #ebe4d2;
   text-decoration: none;
-  font-size: 0.875rem;
+  font-size: 0.86rem;
   font-weight: 500;
   transition: color 0.15s;
 }
 
-.nav-links a:hover { color: var(--accent); }
+.nav-links a:hover { color: #ddb35c; }
 
 .nav-cta {
   background: var(--accent);
-  color: white;
-  padding: 0.5rem 1.1rem;
+  color: #16231c;
+  padding: 0.55rem 1.1rem;
   border-radius: 4px;
   text-decoration: none;
   font-family: var(--vaf-font-mono);
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   white-space: nowrap;
   flex-shrink: 0;
   transition: background 0.18s, transform 0.12s;
 }
 
 .nav-cta:hover {
-  background: var(--vaf-accent-hover);
+  background: #ddb35c;
   transform: translateY(-1px);
 }
 
@@ -129,7 +128,6 @@ section { padding: 5rem 2rem; }
   font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.18em;
-  text-transform: uppercase;
   color: var(--accent);
   margin-bottom: 0.75rem;
 }
@@ -137,13 +135,15 @@ section { padding: 5rem 2rem; }
 h1, h2, h3 { font-family: var(--vaf-font-heading); }
 
 h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 800;
-  line-height: 1.1;
+  font-size: clamp(1.9rem, 4.6vw, 3.2rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
   color: var(--text);
 }
 
 h2 {
+  letter-spacing: 0.01em;
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   font-weight: 700;
   line-height: 1.2;
@@ -170,7 +170,7 @@ p { color: var(--muted); line-height: 1.7; }
 
 /* Hero - stays dark for brand impact */
 .hero {
-  background: linear-gradient(135deg, #16231c 0%, #16231c 60%, #16231c 100%);
+  background: linear-gradient(160deg, #1a2a21 0%, #16231c 65%);
   padding: 7rem 2rem;
 }
 
@@ -183,7 +183,7 @@ p { color: var(--muted); line-height: 1.7; }
   margin-bottom: 1.5rem;
 }
 
-.hero h1 { color: white; }
+.hero h1 { color: #faf7ef; }
 
 .hero-sub {
   font-size: clamp(1.125rem, 2.5vw, 1.375rem);
@@ -208,7 +208,7 @@ p { color: var(--muted); line-height: 1.7; }
 
 .btn-primary {
   background: var(--accent);
-  color: white;
+  color: #16231c;
   padding: 0.875rem 1.75rem;
   border-radius: 8px;
   text-decoration: none;
