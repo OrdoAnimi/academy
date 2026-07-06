@@ -9,10 +9,10 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
-  <meta name="theme-color" content="#16231c">
+  <meta name="theme-color" content="#0b0e11">
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=DM+Sans:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/_tokens.css">
   <link rel="stylesheet" href="../style.css">
   <style>
@@ -22,12 +22,12 @@
     nav  { background: #0C1628; border-bottom-color: rgba(250,247,239,0.07); }
     .nav-brand      { color: #ebe4d2; }
     .nav-links a    { color: #3D4F63; }
-    .nav-links a:hover { color: #b58a34; }
+    .nav-links a:hover { color: #b8924e; }
 
     /* ── Summary band ─────────────────────────────── */
     .dash-summary       { background: #0C1628; }
-    .dash-summary-of    { color: #16231c; }
-    .dash-summary-label { color: #16231c; }
+    .dash-summary-of    { color: #0b0e11; }
+    .dash-summary-label { color: #0b0e11; }
     .dash-summary-text  { color: #2D3F52; }
 
     /* ── Course cards ─────────────────────────────── */
@@ -36,18 +36,18 @@
       border-color: rgba(250,247,239,0.07);
       border-top-color: rgba(250,247,239,0.07);
     }
-    .dash-course.state-inprogress { border-top-color: #b58a34; box-shadow: 0 2px 24px rgba(181,138,52,0.08); }
+    .dash-course.state-inprogress { border-top-color: #b8924e; box-shadow: 0 2px 24px rgba(184,146,78,0.08); }
     .dash-course.state-complete   { border-top-color: #22C55E; box-shadow: 0 2px 24px rgba(34,197,94,0.08);  }
     .dash-course-header  { border-bottom-color: rgba(250,247,239,0.07); }
     .dash-course-title   { color: #ebe4d2; }
     .dash-course-meta    { color: #374151; }
     .dash-course-n       { color: rgba(250,247,239,0.05); }
-    .dash-course.state-inprogress .dash-course-n { color: rgba(181,138,52,0.14); }
+    .dash-course.state-inprogress .dash-course-n { color: rgba(184,146,78,0.14); }
     .dash-course.state-complete   .dash-course-n { color: rgba(34,197,94,0.17);  }
 
     /* ── Progress ─────────────────────────────────── */
     .dash-progress-label { color: #8c9184; }
-    .dash-progress-pct   { color: #b58a34; }
+    .dash-progress-pct   { color: #b8924e; }
     .dash-course.state-complete .dash-progress-pct { color: #22C55E; }
     .dash-course-bar     { background: rgba(250,247,239,0.05); }
 
@@ -64,7 +64,7 @@
     .dash-cert p        { color: #2D3F52; }
 
     /* ── Reset ────────────────────────────────────── */
-    .dash-reset       { border-color: rgba(250,247,239,0.08); color: #16231c; }
+    .dash-reset       { border-color: rgba(250,247,239,0.08); color: #0b0e11; }
     .dash-reset:hover { border-color: rgba(250,247,239,0.18); color: #5a6354; }
 
     /* ── Status badge (dark variant) ─────────────── */
@@ -79,7 +79,7 @@
       flex-shrink: 0;
     }
     .dash-badge-notstarted { background: rgba(250,247,239,0.05); color: #374151; }
-    .dash-badge-inprogress { background: rgba(181,138,52,0.1); color: #b58a34; border: 1px solid rgba(181,138,52,0.2); }
+    .dash-badge-inprogress { background: rgba(184,146,78,0.1); color: #b8924e; border: 1px solid rgba(184,146,78,0.2); }
     .dash-badge-complete   { background: rgba(34,197,94,0.1);  color: #22C55E; border: 1px solid rgba(34,197,94,0.22); }
 
     /* ── Enrol button ─────────────────────────────── */
@@ -87,7 +87,7 @@
       display: inline-flex;
       align-items: center;
       gap: 0.375rem;
-      background: #b58a34;
+      background: #b8924e;
       color: white;
       text-decoration: none;
       font-size: 0.8125rem;
@@ -99,10 +99,10 @@
       width: fit-content;
     }
     .dash-enrol:hover {
-      background: #8c6a26;
+      background: #96753a;
       color: white;
       transform: translateY(-1px);
-      box-shadow: 0 4px 14px rgba(181,138,52,0.35);
+      box-shadow: 0 4px 14px rgba(184,146,78,0.35);
     }
     .dash-enrol-arr { display: inline-block; transition: transform 0.15s; }
     .dash-enrol:hover .dash-enrol-arr { transform: translateX(3px); }
@@ -152,7 +152,7 @@
     /* ── Summary steps counter ────────────────────── */
     .dash-summary-steps {
       font-size: 0.75rem;
-      color: #16231c;
+      color: #0b0e11;
       margin-top: 0.4375rem;
     }
 
