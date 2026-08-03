@@ -3,41 +3,15 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:       #faf7ef;
-  --bg-alt:   #f2ede0;
-  --white:    #f2ede0;
-  --text:     #0b0e11;
-  --muted:    #6e7460;
-  --border:   #ded7c4;
-  --accent:   #b8924e;
-  --indigo:   #96753a;
-  --navy:     #0b0e11;
-  --font:     'DM Sans', system-ui, sans-serif;
-
-  /* ZenCloud master design system tokens */
-  --vaf-bg:             var(--bg);
-  --vaf-surface:        var(--white);
-  --vaf-surface-raised: var(--bg-alt);
-  --vaf-border:         var(--border);
-  --vaf-border-strong:  #c9bfa6;
-  --vaf-text:           var(--text);
-  --vaf-text-2:         #3d4536;
-  --vaf-text-3:         #6e7460;
-  --vaf-accent:         var(--accent);
-  --vaf-accent-hover:   #96753a;
-  --vaf-accent-subtle:  rgba(184,146,78,0.08);
-  --vaf-accent-border:  rgba(184,146,78,0.22);
-  --vaf-navy:           #0b0e11;
-  --vaf-navy-dark:      #07090b;
-  --vaf-font-heading:   'Playfair Display', Georgia, serif;
-  --vaf-font-body:      var(--font);
-  --vaf-font-mono:      'DM Mono', ui-monospace, monospace;
-  --vaf-radius-sm:      4px;
-  --vaf-radius-md:      8px;
-  --vaf-radius-lg:      10px;
-  --vaf-shadow:         0 2px 8px rgba(11,14,17,0.06);
-  --vaf-shadow-md:      0 8px 24px rgba(11,14,17,0.12);
-  --vaf-transition:     200ms ease;
+  --bg:            #faf7ef;
+  --bg-alt:        #f2ede0;
+  --text:          #0b0e11;
+  --muted:         #6e7460;
+  --border:        #ded7c4;
+  --accent:        #b8924e;
+  --accent-hover:  #96753a;
+  --font:          'DM Sans', system-ui, sans-serif;
+  --transition:    200ms ease;
 }
 
 body {
@@ -101,7 +75,7 @@ nav {
   padding: 0.55rem 1.1rem;
   border-radius: 4px;
   text-decoration: none;
-  font-family: var(--vaf-font-mono);
+  font-family: var(--font-mono);
   font-size: 0.7rem;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -124,7 +98,7 @@ section { padding: 5rem 2rem; }
 }
 
 .section-label {
-  font-family: var(--vaf-font-mono);
+  font-family: var(--font-mono);
   font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.18em;
@@ -132,7 +106,7 @@ section { padding: 5rem 2rem; }
   margin-bottom: 0.75rem;
 }
 
-h1, h2, h3 { font-family: var(--vaf-font-heading); }
+h1, h2, h3 { font-family: var(--font-heading); }
 
 h1 {
   font-size: clamp(2rem, 4.8vw, 3.4rem);
@@ -227,12 +201,12 @@ p { color: var(--muted); line-height: 1.7; }
   text-decoration: none;
   font-weight: 700;
   font-size: 0.9375rem;
-  transition: background var(--vaf-transition), transform var(--vaf-transition), box-shadow var(--vaf-transition);
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
   box-shadow: 0 2px 8px rgba(184,146,78,0.25);
 }
 
 .btn-primary:hover {
-  background: var(--vaf-accent-hover);
+  background: var(--accent-hover);
   transform: translateY(-2px);
   box-shadow: 0 4px 16px rgba(184,146,78,0.35);
 }
@@ -260,7 +234,7 @@ p { color: var(--muted); line-height: 1.7; }
   text-decoration: none;
 }
 
-.text-link:hover { color: var(--vaf-accent-hover); }
+.text-link:hover { color: var(--accent-hover); }
 
 .detail-list {
   margin-top: 1rem;
@@ -511,7 +485,7 @@ footer {
 .footer-inner { max-width: 1200px; margin: 0 auto; }
 
 .footer-tagline {
-  font-family: var(--vaf-font-mono);
+  font-family: var(--font-mono);
   font-size: 0.6875rem;
   font-weight: 500;
   letter-spacing: 0.1em;
@@ -731,7 +705,7 @@ footer {
   font-weight: 800;
   color: #ded7c4;
   line-height: 1;
-  font-family: var(--vaf-font-mono);
+  font-family: var(--font-mono);
   letter-spacing: -0.03em;
   flex-shrink: 0;
   padding-top: 2px;
@@ -818,7 +792,7 @@ footer {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--indigo);
+  color: var(--accent-hover);
   margin-bottom: 0.375rem;
 }
 
@@ -891,7 +865,7 @@ footer {
   font-weight: 600;
   min-width: 130px;
   flex-shrink: 0;
-  font-family: var(--vaf-font-mono);
+  font-family: var(--font-mono);
   font-size: 0.75rem;
   line-height: 1.6;
 }
@@ -907,7 +881,7 @@ footer {
   font-size: 0.875rem;
   font-family: var(--font);
   cursor: pointer;
-  transition: color var(--vaf-transition), border-color var(--vaf-transition);
+  transition: color var(--transition), border-color var(--transition);
 }
 
 .dash-reset:hover { color: var(--text); border-color: var(--muted); }
