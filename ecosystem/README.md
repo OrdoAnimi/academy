@@ -1,8 +1,8 @@
 # Ecosystem
 
-Purpose: public map of the Velocity Architecture ecosystem and GitHub build estate.
+Purpose: public map of the OrdoAnimi ecosystem and GitHub build estate.
 
-Live URL: https://velocityarchitecture.com.au/ecosystem/github.html
+Live URL: https://academy.ordoanimi.com/ecosystem/github.html
 
 Important pages:
 - `/ecosystem/github.html`
@@ -14,7 +14,6 @@ Current status:
 Next additions:
 - Add more repo links as the estate grows.
 - Add status notes per repo.
-- Connect to ZenCloud advisory after GitHub migration.
 
 Routing rule:
 Use root-relative links for public navigation, for example `/ecosystem/github.html`.
