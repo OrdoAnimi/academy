@@ -1,12 +1,13 @@
+@import url('/oa-tokens.css');
 :root {
-  --color-primary: #0b0e11;
-  --color-accent: #b8924e;
-  --color-surface: #faf7ef;
-  --color-panel: #f2ede0;
-  --color-text-primary: #0b0e11;
-  --color-text-light: #f2ede0;
+  --color-primary: var(--oa-ink);
+  --color-accent: var(--oa-gold);
+  --color-surface: var(--oa-card);
+  --color-panel: var(--oa-page);
+  --color-text-primary: var(--oa-text);
+  --color-text-light: var(--oa-page);
   --color-text-muted: #6e7460;
-  --color-border: #ded7c4;
+  --color-border: var(--oa-border);
   --font-heading: 'Playfair Display', Georgia, serif;
   --font-body: 'DM Sans', sans-serif;
   --font-mono: 'DM Mono', monospace;

@@ -3,12 +3,12 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:            #faf7ef;
-  --bg-alt:        #f2ede0;
-  --text:          #0b0e11;
+  --bg:            var(--oa-page);
+  --bg-alt:        var(--oa-sunken);
+  --text:          var(--oa-text);
   --muted:         #6e7460;
-  --border:        #ded7c4;
-  --accent:        #b8924e;
+  --border:        var(--oa-border);
+  --accent:        var(--oa-gold);
   --accent-hover:  #96753a;
   --font:          'DM Sans', system-ui, sans-serif;
   --transition:    200ms ease;
@@ -197,7 +197,7 @@ p { color: var(--muted); line-height: 1.7; }
   background: var(--accent);
   color: #0b0e11;
   padding: 0.875rem 1.75rem;
-  border-radius: 8px;
+  border-radius: var(--oa-radius);
   text-decoration: none;
   font-weight: 700;
   font-size: 0.9375rem;
@@ -215,7 +215,7 @@ p { color: var(--muted); line-height: 1.7; }
   background: transparent;
   color: white;
   padding: 0.875rem 1.75rem;
-  border-radius: 8px;
+  border-radius: var(--oa-radius);
   text-decoration: none;
   font-weight: 600;
   font-size: 0.9375rem;
@@ -267,7 +267,7 @@ p { color: var(--muted); line-height: 1.7; }
 }
 
 .module-step {
-  background: #faf7ef;
+  background: var(--oa-card);
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 1.25rem;
@@ -289,7 +289,7 @@ p { color: var(--muted); line-height: 1.7; }
 }
 
 .teach-item {
-  background: #faf7ef;
+  background: var(--oa-card);
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 1.125rem 1.375rem;
@@ -322,7 +322,7 @@ p { color: var(--muted); line-height: 1.7; }
 }
 
 .card {
-  background: #faf7ef;
+  background: var(--oa-card);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.75rem;
@@ -410,7 +410,7 @@ p { color: var(--muted); line-height: 1.7; }
 }
 
 .res-card {
-  background: #faf7ef;
+  background: var(--oa-card);
   border: 1px solid var(--border);
   border-radius: 10px;
   padding: 1.5rem;
@@ -450,7 +450,7 @@ p { color: var(--muted); line-height: 1.7; }
 }
 
 .eco-card {
-  background: #faf7ef;
+  background: var(--oa-card);
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 1.5rem;
@@ -664,7 +664,7 @@ footer {
 .dash-course.state-complete .dash-course-bar .dash-progress-fill { background: #22C55E; }
 
 .dash-course {
-  background: #faf7ef;
+  background: var(--oa-card);
   border: 1px solid var(--border);
   border-top: 3px solid var(--border);
   border-radius: 14px;
