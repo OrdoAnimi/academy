@@ -1,5 +1,5 @@
 # Deployment
 
-Canonical production URL: https://velocityarchitecture.com.au/
+Canonical production URL: https://academy.ordoanimi.com/
 
-Cloudflare Pages deploys the `main` branch from the repository root. The `pages.dev` hostname is infrastructure only and is not the public production identity.
+Vercel (project `academy`) serves the repository root as a static site; redirects live in `vercel.json`. A legacy Cloudflare Pages deployment still answers on velocityarchitecture.com.au and is pending retirement.

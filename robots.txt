@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://velocityarchitecture.com.au/sitemap.xml
+Sitemap: https://academy.ordoanimi.com/sitemap.xml

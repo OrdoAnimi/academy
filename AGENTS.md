@@ -46,7 +46,6 @@ This repository is a static HTML/CSS site. Prefer simple front-end implementatio
   - `ea-artefact-generator`, `sa-artefact-generator`, `ba-artefact-generator`, and `pm-artefact-generator` for artefact production.
   - `pmi-portal` for intake, governance, artefact lifecycle, client transparency, and execution visibility.
   - `vsf-match` for readiness scoring and personalised learning paths.
-  - `studiosix` for the commercial wrapper and AI delivery studio.
   - Certification repositories for Azure SA, SAP EA, CISSP, Agentic AI, and AI-assisted coding or delivery learning.
 - Do not invent uncertain live destinations. Prefer GitHub repository links or existing public URLs when a production URL is not confirmed.
 

@@ -1,12 +1,12 @@
-# Velocity Academy
+# OrdoAnimi Academy
 
-Public learning site for Velocity Architecture pathways and courses.
+Public learning site for OrdoAnimi architecture pathways and courses.
 
-Live site: https://velocityarchitecture.com.au/
+Live site: https://academy.ordoanimi.com/
 
 ## Deployment
 
-Cloudflare Pages publishes the `main` branch from the repository root. The custom domain is the canonical public URL.
+Static site with no build step, deployed to Vercel (project `academy`). Redirects are declared in `vercel.json`. See [docs/deployment.md](docs/deployment.md).
 
 ## Data
 
@@ -14,7 +14,7 @@ The site has no backend or authentication. The optional dashboard stores progres
 
 ## Licence
 
-This repository is proprietary. All rights reserved. No part may be copied, distributed, modified or used for commercial purposes without prior written permission from Zencloud Advisory. See [LICENSE](LICENSE).
+This repository is proprietary. All rights reserved. No part may be copied, distributed, modified or used for commercial purposes without prior written permission from Phil Myint / The OrdoAnimi Group. See [LICENSE](LICENSE).
 
 ---
-© 2026 Zencloud Advisory. All rights reserved. Proprietary and confidential.
+© 2026 Phil Myint / The OrdoAnimi Group. All rights reserved.
