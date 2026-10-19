@@ -1,8 +1,8 @@
 # Resources Notes
 
-Live URL: https://velocityarchitecture.com.au/resources/
+Live URL: https://academy.ordoanimi.com/resources/
 
-This folder contains the public Resources section for Velocity Academy.
+This folder contains the public Resources section for OrdoAnimi Academy.
 
 Current status: resource hub page is live.
 

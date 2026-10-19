@@ -1,6 +1,6 @@
 # Enterprise Architecture Foundations Notes
 
-Live URL: https://velocityarchitecture.com.au/courses/enterprise-architecture-foundations/
+Live URL: https://academy.ordoanimi.com/courses/enterprise-architecture-foundations/
 
 Status: course landing page and modules 1-12 are live.
 

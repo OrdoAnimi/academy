@@ -1,15 +1,15 @@
 # Knowledge
 
-Purpose: the Velocity Knowledge Portal for articles, series, concepts, Medium references, and implementation notes.
+Purpose: the OrdoAnimi Knowledge Portal for articles, series, concepts, Medium references, and implementation notes.
 
-Live URL: https://velocityarchitecture.com.au/knowledge/
+Live URL: https://academy.ordoanimi.com/knowledge/
 
 Important pages:
 - `/knowledge/`
 - `/knowledge/series/`
 - `/knowledge/articles/`
 - `/knowledge/concepts/`
-- `/knowledge/concepts/velocity-and-safe.html`
+- `/knowledge/concepts/flow-and-safe.html`
 - `/knowledge/medium/`
 
 Current status:

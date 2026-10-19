@@ -1,8 +1,8 @@
 # Certification
 
-Purpose: pilot certification pathways for applied Velocity Architecture capability.
+Purpose: pilot certification pathways for applied OrdoAnimi capability.
 
-Live URL: https://velocityarchitecture.com.au/certification/
+Live URL: https://academy.ordoanimi.com/certification/
 
 Important pages:
 - `/certification/`
