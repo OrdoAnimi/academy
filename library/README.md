@@ -1,8 +1,8 @@
 # Library
 
-Purpose: long-form books, guides, manuscripts, and structured reference material for Velocity Academy.
+Purpose: long-form books, guides, manuscripts, and structured reference material for OrdoAnimi Academy.
 
-Live URL: https://velocityarchitecture.com.au/library/
+Live URL: https://academy.ordoanimi.com/library/
 
 Important pages:
 - `/library/`

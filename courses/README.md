@@ -1,8 +1,8 @@
 # Courses
 
-Purpose: structured learning paths for Velocity Academy.
+Purpose: structured learning paths for OrdoAnimi Academy.
 
-Live URL: https://velocityarchitecture.com.au/courses/
+Live URL: https://academy.ordoanimi.com/courses/
 
 Important pages:
 - `/courses/`

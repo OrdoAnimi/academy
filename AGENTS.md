@@ -1,8 +1,8 @@
-# Velocity Academy Agent Instructions
+# OrdoAnimi Academy Agent Instructions
 
 ## Product Purpose
 
-Velocity Academy is the front door and training ground for the Velocity Architecture ecosystem. It helps enterprise architects, solution architects, cloud advisors, AI-enabled delivery practitioners, and emerging Design Authorities move from learning concepts to applying frameworks, producing artefacts, assessing readiness, and operating inside governed delivery environments.
+OrdoAnimi Academy is the front door and training ground for the OrdoAnimi ecosystem. It helps enterprise architects, solution architects, cloud advisors, AI-enabled delivery practitioners, and emerging Design Authorities move from learning concepts to applying frameworks, producing artefacts, assessing readiness, and operating inside governed delivery environments.
 
 This repository is a static HTML/CSS site. Prefer simple front-end implementation unless the repo later establishes a backend pattern.
 
@@ -40,12 +40,12 @@ This repository is a static HTML/CSS site. Prefer simple front-end implementatio
 - Link Academy pages to ecosystem destinations only when the destination is relevant to the learning action.
 - Logical ecosystem destinations include:
   - `ordo-animi` as the brain and coordinating intelligence layer.
-  - `exec.velocityarchitecture.com.au` as the executive operating surface.
-  - `velocity-architecture` for the framework and decision system.
-  - `vaf-sa` for the solution architecture practitioner framework.
+  - `eft.ordoanimi.com` as the executive operating surface.
+  - `framework` for the framework and decision system.
+  - `oa-sa` for the solution architecture practitioner framework.
   - `ea-artefact-generator`, `sa-artefact-generator`, `ba-artefact-generator`, and `pm-artefact-generator` for artefact production.
   - `pmi-portal` for intake, governance, artefact lifecycle, client transparency, and execution visibility.
-  - `vsf-match` for readiness scoring and personalised learning paths.
+  - `osf-match` for readiness scoring and personalised learning paths.
   - Certification repositories for Azure SA, SAP EA, CISSP, Agentic AI, and AI-assisted coding or delivery learning.
 - Do not invent uncertain live destinations. Prefer GitHub repository links or existing public URLs when a production URL is not confirmed.
 
@@ -58,7 +58,7 @@ This repository is a static HTML/CSS site. Prefer simple front-end implementatio
 
 ## Acceptance Criteria
 
-- A new visitor can immediately understand what Velocity Academy is.
+- A new visitor can immediately understand what OrdoAnimi Academy is.
 - A practitioner can choose a pathway within two clicks.
 - Each pathway connects learning to framework, tools, artefacts, readiness, and next action.
 - Navigation links resolve where possible.
